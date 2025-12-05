@@ -14,4 +14,4 @@ Integrantes:
 
 -	NICOLAU, Jorge
 
-Ver ENUNCIADO
+Ver [ENUNCIADO](TPISIM.pdf)
