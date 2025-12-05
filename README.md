@@ -2,7 +2,7 @@
 
 # Maestría en Ciencia de Datos 2024/2025
 
-## Simulación y OPtimización en Ciencia de Datos 
+## Simulación y Optimización en Ciencia de Datos 
 ## Trabajo Práctico Integral
 
 Profesores:
@@ -12,6 +12,8 @@ Profesores:
 
 Integrantes:
 
+-   CANCELAS, Martín
+-   FILIPUZZI, Juan Manuel
 -	NICOLAU, Jorge
 
 Ver [ENUNCIADO](TPISIM.pdf)
