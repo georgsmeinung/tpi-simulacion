@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "tpi-simulation-in-data-science.html#simulación-y-optimización-en-ciencia-de-datos",
+    "href": "tpi-simulation-in-data-science.html#simulación-y-optimización-en-ciencia-de-datos",
+    "title": "Trabajo Práctico Integral - Simulación en Ciencia de Datos",
+    "section": "Simulación y Optimización en Ciencia de Datos",
+    "text": "Simulación y Optimización en Ciencia de Datos"
+  },
+  {
+    "objectID": "tpi-simulation-in-data-science.html#trabajo-práctico-integral",
+    "href": "tpi-simulation-in-data-science.html#trabajo-práctico-integral",
+    "title": "Trabajo Práctico Integral - Simulación en Ciencia de Datos",
+    "section": "Trabajo Práctico Integral",
+    "text": "Trabajo Práctico Integral\nProfesores:\n\nDEL ROSSO, Rodrigo\nNUSKE, Ezequiel\n\nIntegrantes:\n\nCANCELAS, Martín\nFILIPUZZI, Juan Manuel\nNICOLAU, Jorge\n\nVer RESOLUCIÓN\n\nIntroducción\nEste Trabajo Práctico (TP) integra los contenidos vistos en las clases\n\nUnidad I – Generación de números pseudoaleatorios y Monte Carlo\nUnidad II – Bayes, cadenas de Markov y Metropolis–Hastings\nUnidad III – Simulación de eventos discretos (SED)\nUnidad IV – Procesos continuos (NHPP, CTMC, SDE)\nUnidad V – Reacciones químicas estocásticas: Gillespie SSA y Next Reaction Method\n\nEl objetivo es que el alumno implemente técnicas de simulación, compare métodos, valide sus resultados y presente visualizaciones claras.\nCada apartado incluye consignas, código sugerido y entregables obligatorios."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
