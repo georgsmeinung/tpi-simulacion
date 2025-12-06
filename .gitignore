@@ -1,2 +1,7 @@
 /.quarto/
 **/*.quarto_ipynb
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/tpi-simulacion.iml
+.idea/vcs.xml
