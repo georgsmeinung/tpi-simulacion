@@ -17,6 +17,9 @@ Integrantes:
 -	NICOLAU, Jorge
 
 Ver [ENUNCIADO](TPISIM.pdf)
+
 Ver [RESOUCIÓN](docs/tpi-simulation-in-data-science.html)
+
 Descargar [INFORME EN PDF](docs/tpi-simulation-in-data-science.pdf)
+
 Código Fuente en [NOTEBOOK JUPYTER](tpi-simulation-in-data-science.ipynb)
