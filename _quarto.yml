@@ -18,15 +18,15 @@ format:
     css: styles.css
     toc: true
   pdf:
-    documentclass: article
+    linestretch: 1.5
+    documentclass: scrartcl
+    classoption:
+      - onehalfspacing # Ensures 1.5 spacing is applied throughout the document
+    indent: true # Use indentation for paragraphs, as is standard for APA
+    fontsize: 12pt # Common APA font size
+    geometry:
+      - margin=1in
     pdf-engine: xelatex         
     mainfont: "Arial"       # Nombre exacto de la fuente en tu PC
     monofont: "Consolas"    # Fuente código (opcional)
-    geometry:
-      - top=2.54cm
-      - bottom=2.54cm
-      - left=2.54cm
-      - right=2.54cm
     papersize: a4 
-
-
