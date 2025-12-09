@@ -13,8 +13,8 @@ website:
 
 format:
   html:
-    mainfont: "Noto Sans"       # Fuente del texto
-    monofont: "Noto Sans Mono"  # Fuente para bloques de código
+    mainfont: "Arial"     # Fuente del texto
+    monofont: "Consolas"  # Fuente para bloques de código
     css: styles.css
     toc: true
   pdf:
