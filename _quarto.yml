@@ -7,6 +7,9 @@ website:
     left:
       - href: index.qmd
         text: Home
+    right:
+      - href: https://github.com/georgsmeinung/tpi-simulacion/blob/main/tpi-simulation-in-data-science.ipynb
+        text: "Código Fuente"      
 
 format:
   html:
