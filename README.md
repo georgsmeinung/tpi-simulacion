@@ -7,18 +7,18 @@
 
 Profesores:
 
-- DEL ROSSO, Rodrigo
-- NUSKE, Ezequiel
+-   DEL ROSSO, Rodrigo
+-   NUSKE, Ezequiel
 
 Integrantes:
 
 -   CANCELAS, Martín
 -   FILIPUZZI, Juan Manuel
--	NICOLAU, Jorge
+-   NICOLAU, Jorge
 
 Ver [ENUNCIADO](TPISIM.pdf)
 
-Ver [RESOUCIÓN](docs/index.html)
+Ver [RESOLUCIÓN](https://georgsmeinung.github.io/tpi-simulacion)
 
 Descargar [INFORME EN PDF](docs/tpi-simulation-in-data-science.pdf)
 
