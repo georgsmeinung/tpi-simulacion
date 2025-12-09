@@ -26,7 +26,7 @@ format:
       - top=2.54cm
       - bottom=2.54cm
       - left=2.54cm
-      - right=1.27cm
+      - right=2.54cm
     papersize: a4 
 
 
