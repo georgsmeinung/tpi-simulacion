@@ -7,11 +7,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-    right:
-      - text: "Reporte en PDF"
-        href: "tpi-simulation-in-data-science.pdf" 
-
 
 format:
   html:
