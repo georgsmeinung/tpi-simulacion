@@ -22,11 +22,11 @@ format:
   pdf:
     documentclass: article
     pdf-engine: xelatex         
-    mainfont: "Noto Sans"       # Nombre exacto de la fuente en tu PC
-    monofont: "Noto Sans Mono"  # Fuente código (opcional)
+    mainfont: "Arial"       # Nombre exacto de la fuente en tu PC
+    monofont: "Consolas"    # Fuente código (opcional)
     geometry:
       - top=2.54cm
-      - bottom=1.27cm
+      - bottom=2.54cm
       - left=2.54cm
       - right=1.27cm
     papersize: a4 
