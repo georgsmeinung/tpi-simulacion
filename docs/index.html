@@ -245,7 +245,7 @@ window.Quarto = {
 <section id="configuración" class="level3">
 <h3 class="anchored" data-anchor-id="configuración">Configuración</h3>
 <p>Para el presente trabajo se utilizan los siguientes parámetros globales y semilla</p>
-<div id="c322d58f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.020658,&quot;end_time&quot;:&quot;2025-12-09T03:18:20.944827&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:20.924169&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="1">
+<div id="ded31377" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.025001,&quot;end_time&quot;:&quot;2025-12-09T04:07:46.056051&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:07:46.031050&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># CONFIGURACIÓN</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Parámetros (LCG estándar de C++ minstd_rand)</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>lgc_a, lgc_c, lgc_m <span class="op">=</span> <span class="dv">48271</span>, <span class="dv">0</span>, <span class="dv">2</span><span class="op">**</span><span class="dv">31</span> <span class="op">-</span> <span class="dv">1</span></span>
@@ -261,7 +261,7 @@ window.Quarto = {
 <p><span class="math display">\[X_{n+1} = (aX_n + c) \mod m\]</span></p>
 <p>mediante la cual se produce una secuencia de números pseudoaleatorios a partir de un valor inicial denominado semilla (<span class="math inline">\(X_0\)</span>). El proceso requiere la definición de tres constantes enteras —el multiplicador (<span class="math inline">\(a\)</span>), el incremento (<span class="math inline">\(c\)</span>) y el módulo (<span class="math inline">\(m\)</span>)— y opera calculando el siguiente valor de la serie al multiplicar el estado actual por <span class="math inline">\(a\)</span>, sumar <span class="math inline">\(c\)</span> y obtener el residuo de la división por <span class="math inline">\(m\)</span>, resultando en una sucesión periódica que, si bien carece de aleatoriedad verdadera, es computacionalmente eficiente y totalmente reproducible si se mantienen los mismos parámetros iniciales.</p>
 <p>Al usar operaciones aritméticas básicas, es extremadamente rápido computacionalmente. Como hay un número finito de resultados posibles (de <span class="math inline">\(0\)</span> a <span class="math inline">\(m-1\)</span>), la secuencia eventualmente se repetirá. A esto se le llama el “periodo”. Por otra parte si se usa la misma semilla (<span class="math inline">\(X_0\)</span>), se obtendrá exactamente la misma secuencia de números. Esto es útil para “debugging” o reproducir simulaciones científicas, pero malo para la seguridad. No es seguro criptográficamente: No se debe usar para contraseñas o claves de seguridad, ya que es relativamente fácil predecir los siguientes números analizando la secuencia previa.</p>
-<div id="69d2a072" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.018415,&quot;end_time&quot;:&quot;2025-12-09T03:18:20.990299&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:20.971884&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="2">
+<div id="0ef38cd0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.019104,&quot;end_time&quot;:&quot;2025-12-09T04:07:46.106866&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:07:46.087762&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -281,7 +281,7 @@ window.Quarto = {
 <section id="histograma" class="level4">
 <h4 class="anchored" data-anchor-id="histograma">Histograma</h4>
 <p>El histograma visualiza la distribución de frecuencia de los números generados. Para un buen generador, esperamos una distribución uniforme (plana), lo que significa que cada intervalo del rango tiene aproximadamente la misma probabilidad de contener un número.</p>
-<div id="e3f1255f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.299418,&quot;end_time&quot;:&quot;2025-12-09T03:18:21.317914&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:21.018496&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="3">
+<div id="afb750ba" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.331518,&quot;end_time&quot;:&quot;2025-12-09T04:07:46.468446&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:07:46.136928&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> lcg_generator(seed<span class="op">=</span>rnd_seed, a<span class="op">=</span>lgc_a, c<span class="op">=</span>lgc_c, m<span class="op">=</span>lgc_m, n<span class="op">=</span><span class="dv">5000</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograma</span></span>
@@ -305,7 +305,7 @@ window.Quarto = {
 <p>Para la lógica de Implementación (con Corridas Arriba/Abajo) se toma la secuencia <span class="math inline">\(u_1, u_2, \dots, u_n\)</span>. Se crea una nueva secuencia binaria basada en si el valor actual es mayor o menor que el anterior (<span class="math inline">\(+\)</span> si <span class="math inline">\(u_i &lt; u_{i+1}\)</span>, <span class="math inline">\(-\)</span> si <span class="math inline">\(u_i &gt; u_{i+1}\)</span>). Luego se cuenta el número total de rachas (cambios de <span class="math inline">\(+\)</span> a <span class="math inline">\(-\)</span> o viceversa). Se calcual el estadístico Z comparando el número de rachas obtenido con el esperado teóricamente usando la aproximación normal para muestras grandes (<span class="math inline">\(N &gt; 20\)</span>).</p>
 <p><span class="math display">\[\mu_R = \frac{2N - 1}{3}\]</span> <span class="math display">\[\sigma_R^2 = \frac{16N - 29}{90}\]</span> <span class="math display">\[Z = \frac{R - \mu_R}{\sigma_R}\]</span></p>
 <p>Si el valor absoluto de <span class="math inline">\(Z\)</span> (<span class="math inline">\(|Z|\)</span>) es mayor que el valor crítico (ej. <span class="math inline">\(1.96\)</span> para un 95% de confianza), se rechaza la hipótesis de independencia.</p>
-<div id="4b7bc4fb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.023225,&quot;end_time&quot;:&quot;2025-12-09T03:18:21.388565&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:21.365340&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="4">
+<div id="985b8c0d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.02676,&quot;end_time&quot;:&quot;2025-12-09T04:07:46.548417&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:07:46.521657&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Runs Test</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>runs <span class="op">=</span> <span class="dv">1</span> <span class="co"># Empieza la primera racha</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(datos) <span class="op">-</span> <span class="dv">1</span>):</span>
@@ -331,22 +331,25 @@ Rachas esperadas: 3333.00</code></pre>
 <h4 class="anchored" data-anchor-id="gráfico-de-triples-spectral-test-visual">Gráfico de Triples (Spectral Test Visual)</h4>
 <p>Esta es una visualización en 3D para detectar correlaciones seriales. Los generadores LCG malos tienden a concentrar los puntos en planos discretos en lugar de llenar el espacio uniformemente (fenómeno conocido como planos de Marsaglia).</p>
 <p>El gráfico de triples opera bajo la lógica de visualización del espacio de fases para detectar correlaciones seriales de largo alcance, mapeando tríadas consecutivas de la secuencia generada <span class="math inline">\((u_n, u_{n+1}, u_{n+2})\)</span> como coordenadas espaciales <span class="math inline">\((x, y, z)\)</span> en un cubo tridimensional. La premisa fundamental es que, si los números fueran verdaderamente independientes, los puntos deberían llenar el volumen de manera caótica y uniforme como una “nube de polvo”; sin embargo, debido a la naturaleza lineal de la fórmula <span class="math inline">\(X_{n+1} = (aX_n + c)\)</span>, los LCGs deficientes exhiben una estructura cristalina donde los puntos se alinean rígidamente en un número finito de planos paralelos (fenómeno conocido como planos de Marsaglia), revelando visualmente que la aleatoriedad es solo aparente y que existen dependencias matemáticas estrictas entre valores sucesivos.</p>
-<div id="792fe150" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.312634,&quot;end_time&quot;:&quot;2025-12-09T03:18:21.750764&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:21.438130&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de Triples (3D)</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
+<div id="b803e6d4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.313713,&quot;end_time&quot;:&quot;2025-12-09T04:07:46.914054&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:07:46.600341&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Esto estira el lienzo hacia la derecha.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">7</span>))</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>, projection<span class="op">=</span><span class="st">'3d'</span>)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear tripletas (x, y, z)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear tripletas</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>x_vals <span class="op">=</span> datos[:<span class="op">-</span><span class="dv">2</span>]</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>y_vals <span class="op">=</span> datos[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>z_vals <span class="op">=</span> datos[<span class="dv">2</span>:]</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>ax.scatter(x_vals, y_vals, z_vals, s<span class="op">=</span><span class="dv">1</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Gráfico de Triples (Correlación Serial)'</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'U(i)'</span>)<span class="op">;</span> </span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'U(i+1)'</span>)<span class="op">;</span> </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>ax.set_zlabel(<span class="st">'U(i+2)'</span>)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Gráfico de Triples (Correlación Serial)'</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'U(i)'</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'U(i+1)'</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>ax.set_zlabel(<span class="st">'U(i+2)'</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(right<span class="op">=</span><span class="fl">0.75</span>, left<span class="op">=</span><span class="fl">0.1</span>, bottom<span class="op">=</span><span class="fl">0.1</span>, top<span class="op">=</span><span class="fl">0.9</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -358,7 +361,7 @@ Rachas esperadas: 3333.00</code></pre>
 <p>La observación de una nube de puntos dispersa y volumétrica que llena el cubo de manera homogénea se interpreta como una validación exitosa de la calidad espectral del generador, indicando que la correlación serial entre ternas consecutivas <span class="math inline">\((u_n, u_{n+1}, u_{n+2})\)</span> es despreciable o inexistente para fines prácticos. Visualmente, esto contrasta con los generadores deficientes que agrupan los puntos en “rebanadas” o planos paralelos separados; por el contrario, una distribución uniforme implica que el algoritmo posee un periodo lo suficientemente largo y unos parámetros adecuados para “romper” la estructura reticular visible, garantizando que no existen dependencias geométricas fuertes y haciendo al generador apto para simulaciones Monte Carlo multidimensionales.</p>
 <p>La estimación del valor de <span class="math inline">\(\pi\)</span> mediante el método de Monte Carlo utiliza el Generador Congruencial Lineal (LCG) para producir pares de coordenadas <span class="math inline">\((x, y)\)</span> uniformemente distribuidas en el intervalo <span class="math inline">\([0, 1)\)</span>, simulando el lanzamiento aleatorio de puntos sobre un cuadrado unitario que contiene un cuarto de círculo inscrito. El procedimiento se fundamenta en la geometría probabilística: dado que el área del cuarto de círculo es <span class="math inline">\(\pi/4\)</span> y el área del cuadrado es <span class="math inline">\(1\)</span>, la probabilidad de que un punto caiga dentro del círculo es exactamente <span class="math inline">\(\pi/4\)</span>; por consiguiente, al verificar cuántos puntos cumplen la condición <span class="math inline">\(x^2 + y^2 \le 1\)</span> y dividir esa cantidad por el número total de puntos generados, se obtiene una proporción que, multiplicada por <span class="math inline">\(4\)</span>, aproxima el valor de <span class="math inline">\(\pi\)</span>, sirviendo esto a su vez como una prueba funcional de la calidad del LCG, ya que un generador sesgado o correlacionado (como el que forma líneas en el gráfico de triples) arrojará un valor de <span class="math inline">\(\pi\)</span> incorrecto al no cubrir el área uniformemente.</p>
 <p>Lógica de Implementación 1. Generación de Pares: Se utiliza el LCG para obtener dos números consecutivos normalizados (<span class="math inline">\(u_i, u_{i+1}\)</span>) que actúan como coordenadas <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>. 2. Condición Geométrica: Se calcula la distancia al origen (<span class="math inline">\(d = x^2 + y^2\)</span>). 3. Conteo: Si <span class="math inline">\(d \le 1\)</span>, el punto está “dentro” del círculo (Acierto). 4. Cálculo Final: <span class="math inline">\(\pi \approx 4 \times \frac{\text{Aciertos}}{\text{Total de Puntos}}\)</span>.</p>
-<div id="7bd62055" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.334473,&quot;end_time&quot;:&quot;2025-12-09T03:18:22.157840&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:21.823367&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="6">
+<div id="05fa0bc2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.344965,&quot;end_time&quot;:&quot;2025-12-09T04:07:47.338381&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:07:46.993416&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Función Monte Carlo con Gráfico y Retorno de Valor</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> estimar_y_graficar_pi(n_puntos):   </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Se generan los números necesarios (2 por punto)</span></span>
@@ -445,7 +448,7 @@ Diferencia real: 0.008007</code></pre>
 <li>Posterior (A posteriori): <span class="math inline">\(P(\theta|X) \propto \theta^{7+1-1} (1-\theta)^{3+1-1} = \theta^7 (1-\theta)^3 \rightarrow \text{Beta}(8,4)\)</span></li>
 </ul>
 <p>En términos de Python:</p>
-<div id="c20d643a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:9.217223,&quot;end_time&quot;:&quot;2025-12-09T03:18:31.427158&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:22.209935&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="7">
+<div id="e087f9a2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:10.679258,&quot;end_time&quot;:&quot;2025-12-09T04:07:58.071034&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:07:47.391776&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -477,7 +480,7 @@ Diferencia real: 0.008007</code></pre>
 <span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> lp <span class="op">+</span> log_likelihood(theta, heads, trials)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Como el objetivo es obtener exactamente <span class="math inline">\(\text{Beta}(8,4)\)</span> con 7 caras y 3 cruces, implícitamente se está asumiendo que no se aporta información previa (el 1 inicial de la Beta actúa como un “neutro” o punto de partida cero en términos de influencia).</p>
-<div id="54619982" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:3.414504,&quot;end_time&quot;:&quot;2025-12-09T03:18:34.891352&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:31.476848&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="8">
+<div id="25f563f4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:4.184242,&quot;end_time&quot;:&quot;2025-12-09T04:08:02.308971&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:07:58.124729&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuración del Problema</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(rnd_seed)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -550,7 +553,7 @@ Cadena 4 completada.</code></pre>
 <section id="traceplot" class="level4">
 <h4 class="anchored" data-anchor-id="traceplot">Traceplot</h4>
 <p>El Traceplot permite visualizar la evolución temporal de las cadenas de Markov, facilitando la verificación inmediata de la convergencia asintótica y la calidad del muestreo. A través de este gráfico se evalúa si el algoritmo ha alcanzado la estacionariedad (oscilando alrededor de un valor estable sin tendencias) y si existe una mezcla adecuada del espacio de parámetros (exploración eficiente), lo cual es indispensable para validar que las muestras obtenidas son representativas de la distribución posterior objetivo y descartar problemas como una alta autocorrelación o una configuración errónea del tamaño de paso.</p>
-<div id="f28a61b6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:3.148354,&quot;end_time&quot;:&quot;2025-12-09T03:18:38.090208&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:34.941854&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="9">
+<div id="6dfd598f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:3.121539,&quot;end_time&quot;:&quot;2025-12-09T04:08:05.479692&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:02.358153&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Traceplot y Densidad (Histograma implícito en kde)</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Arviz genera automáticamente </span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Traceplot a la derecha y la densidad a la izquierda</span></span>
@@ -573,7 +576,7 @@ Cadena 4 completada.</code></pre>
 <section id="autocorrelación" class="level4">
 <h4 class="anchored" data-anchor-id="autocorrelación">Autocorrelación</h4>
 <p>El análisis de la autocorrelación permite cuantificar la dependencia serial inherente entre las muestras generadas por la cadena de Markov, dado que los algoritmos MCMC producen, por definición, observaciones correlacionadas en lugar de independientes. Este diagnóstico es crítico para evaluar la eficiencia del muestreo (mixing), ya que una persistencia alta de la correlación a través de múltiples retardos (lags) indica una exploración lenta del espacio de parámetros y reduce el tamaño de muestra efectivo (ESS), lo que alertaría sobre la necesidad de incrementar el número de iteraciones o ajustar el tamaño de paso para garantizar que la inferencia estadística sobre la posterior sea fiable y precisa.</p>
-<div id="4e826c7e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.75847,&quot;end_time&quot;:&quot;2025-12-09T03:18:38.959083&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:38.200613&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="10">
+<div id="52a0308a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.78296,&quot;end_time&quot;:&quot;2025-12-09T04:08:06.370154&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:05.587194&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Autocorrelación</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>az.plot_autocorr(idata, max_lag<span class="op">=</span><span class="dv">20</span>, ax<span class="op">=</span>axes)</span>
@@ -593,7 +596,7 @@ Cadena 4 completada.</code></pre>
 <section id="histograma-vs-analítica-beta84" class="level4">
 <h4 class="anchored" data-anchor-id="histograma-vs-analítica-beta84">Histograma vs Analítica Beta(8,4)</h4>
 <p>La superposición del histograma de frecuencias empíricas frente a la curva analítica de la distribución Beta es una prueba definitiva de validación, aprovechando que el modelo Beta-Binomial posee una solución cerrada conocida que sirve como “verdad fundamental” (<em>ground truth</em>). Este diagnóstico visual permite confirmar rigurosamente que el algoritmo Metropolis-Hastings está muestreando fielmente de la distribución objetivo y no de una aproximación errónea, verificando así que la lógica computacional, la función de verosimilitud y el mecanismo de aceptación/rechazo han sido implementados con exactitud matemática y que el muestreador recupera la geometría correcta de la posterior sin sesgos.</p>
-<div id="153bab5c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.390403,&quot;end_time&quot;:&quot;2025-12-09T03:18:39.468381&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:39.077978&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="11">
+<div id="838d016a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.411671,&quot;end_time&quot;:&quot;2025-12-09T04:08:06.891234&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:06.479563&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograma vs Analítica Beta(8,4)</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -638,7 +641,7 @@ Cadena 4 completada.</code></pre>
 <section id="r-hat-con-4-cadenas-y-ess-effective-sample-size" class="level4">
 <h4 class="anchored" data-anchor-id="r-hat-con-4-cadenas-y-ess-effective-sample-size">R-hat con 4 cadenas y ESS (Effective Sample Size)</h4>
 <p>Las métricas R-hat y ESS (Tamaño de Muestra Efectivo) proporcionan una validación cuantitativa y objetiva de la fiabilidad y precisión de la simulación, superando las limitaciones de la inspección visual. El estadístico R-hat resulta indispensable al utilizar múltiples cadenas para verificar matemáticamente la convergencia global, asegurando a través de la comparación de varianzas que el algoritmo no ha quedado atrapado en óptimos locales; simultáneamente, el ESS es crítico para cuantificar el volumen real de información independiente generada descontando la autocorrelación, garantizando así que la estimación de la posterior posea un error estándar de Monte Carlo lo suficientemente reducido para ser estadísticamente válida.</p>
-<div id="251ae6f8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.344298,&quot;end_time&quot;:&quot;2025-12-09T03:18:39.928470&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:39.584172&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="12">
+<div id="1152a896" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.368148,&quot;end_time&quot;:&quot;2025-12-09T04:08:07.376574&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:07.008426&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R-hat y ESS (Effective Sample Size)</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> az.summary(idata, kind<span class="op">=</span><span class="st">"diagnostics"</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -681,7 +684,7 @@ ESS (Effective Sample Size): 1691.0</code></pre>
 <li><span class="math inline">\(c\)</span> (Servidores): Variable.</li>
 </ul>
 <p>Es importante resaltar que si usamos <span class="math inline">\(c=1\)</span> (M/M/1), el sistema será inestable porque la tasa de llegada (10) es mayor que la capacidad de servicio (4). La cola crecerá infinitamente. Para un sistema estable, necesitamos <span class="math inline">\(c \ge 3\)</span> (capacidad 12 &gt; 10). Por esto se ha configurado el código por defecto con NUM_SERVIDORES = 3, pero puede cambiarse a 1 para observar cómo se satura.</p>
-<div id="0eb589ca" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.046365,&quot;end_time&quot;:&quot;2025-12-09T03:18:40.140345&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:40.093980&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="13">
+<div id="39b6943d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.054324,&quot;end_time&quot;:&quot;2025-12-09T04:08:07.598393&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:07.544069&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> heapq</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -854,7 +857,7 @@ ESS (Effective Sample Size): 1691.0</code></pre>
 <span id="cb17-170"><a href="#cb17-170" aria-hidden="true" tabindex="-1"></a>        plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A continuación se utiliza la clase de Simulación M/M/c implementada. Si <code>n_servidores=1</code> la cola crece infinitamente, esto ese produce un cuello de botella</p>
-<div id="a9d130b8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.031285,&quot;end_time&quot;:&quot;2025-12-09T03:18:40.239646&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:40.208361&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="14">
+<div id="b05d1e6f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.040294,&quot;end_time&quot;:&quot;2025-12-09T04:08:07.713097&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:07.672803&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurar la simulación (8 horas, lambda=10, mu=4, c=3)</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>mi_simulacion <span class="op">=</span> SimulacionMMC_Log(</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    tiempo_max<span class="op">=</span><span class="fl">8.0</span>, </span>
@@ -872,19 +875,19 @@ ESS (Effective Sample Size): 1691.0</code></pre>
       RESULTADOS DE LA SIMULACIÓN
 ========================================
 Tiempo simulado: 8.00 horas
-Total llegadas:  76
-Total atendidos: 74
+Total llegadas:  73
+Total atendidos: 70
 ----------------------------------------
-Longitud prom cola (Lq): 0.6311 clientes
-Tiempo prom cola (Wq): 3.99 minutos
-Servidores ocupados (prom): 1.98
-Utilización (Rho): 65.95%
+Longitud prom cola (Lq): 1.7134 clientes
+Tiempo prom cola (Wq): 11.27 minutos
+Servidores ocupados (prom): 2.40
+Utilización (Rho): 79.95%
 ========================================
 </code></pre>
 </div>
 </div>
 <p>Para visualizar los resultados de la simulación de eventos discretos se usan gráficos de paso (step plots) dad que el estado del sistema (número en cola en espera o servidores ocupados) permanece constante entre eventos y va cambiando con cada arribo.</p>
-<div id="c8d606e9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.524828,&quot;end_time&quot;:&quot;2025-12-09T03:18:40.833021&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:40.308193&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="15">
+<div id="ce2ec000" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.575,&quot;end_time&quot;:&quot;2025-12-09T04:08:08.358349&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:07.783349&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar el gráfico de pasos</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>mi_simulacion.graficar_historial()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -909,7 +912,7 @@ Utilización (Rho): 65.95%
 <li>Generación: Se generan “candidatos” a eventos usando un Proceso de Poisson Homogéneo con la tasa máxima <span class="math inline">\(\lambda_{max}\)</span>.</li>
 <li>Filtrado (Thinning): Se acepta cada candidato como un evento real con probabilidad <span class="math inline">\(P = \frac{\lambda(t)}{\lambda_{max}}\)</span>.</li>
 </ol>
-<div id="fdab323a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.039851,&quot;end_time&quot;:&quot;2025-12-09T03:18:40.996202&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:40.956351&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="16">
+<div id="1149cdde" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.04127,&quot;end_time&quot;:&quot;2025-12-09T04:08:08.524559&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:08.483289&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1013,7 +1016,7 @@ Utilización (Rho): 65.95%
 <span id="cb21-101"><a href="#cb21-101" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">60</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A continuación estas funciones se usan en una simulación de 7 días o 168 horas:</p>
-<div id="3837dcf8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.090776,&quot;end_time&quot;:&quot;2025-12-09T03:18:41.192079&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:41.101303&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="17">
+<div id="c3ed2890" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.094805,&quot;end_time&quot;:&quot;2025-12-09T04:08:08.692506&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:08.597701&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parámetros </span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>DIAS <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>HORAS_TOTALES <span class="op">=</span> DIAS <span class="op">*</span> <span class="dv">24</span></span>
@@ -1056,7 +1059,7 @@ Día 7      | 144h - 168h         | 491        | 20.46
 </div>
 </div>
 <p>Se visualizan los resultados de la simulación:</p>
-<div id="603adaf7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.449859,&quot;end_time&quot;:&quot;2025-12-09T03:18:41.717827&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:41.267968&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="18">
+<div id="3ec1f019" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.746354,&quot;end_time&quot;:&quot;2025-12-09T04:08:09.514873&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:08.768519&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">7</span>))</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1119,7 +1122,7 @@ Día 7      | 144h - 168h         | 491        | 20.46
 <p><span class="math display">\[\to \text{mRNA} (k_{1}=10)\]</span> <span class="math display">\[\text{mRNA}\to (k_{2}=1)\]</span></p>
 <p>Basado en esta descripción tenemos dos reacciones: 1. Producción (Transcripción): <span class="math inline">\(\emptyset \xrightarrow{k_1} \text{mRNA}\)</span>. Tasa constante: <span class="math inline">\(k_1 = 10\)</span>. Esta reacción incrementa el conteo de ARNm en 1. 3. Degradación: <span class="math inline">\(\text{mRNA} \xrightarrow{k_2} \emptyset\)</span>. Tasa dependiente de la cantidad actual: <span class="math inline">\(k_2 = 1\)</span>. Esta reacción disminuye el conteo de ARNm en 1.</p>
 <p>Cabe destacar que el estado estacionario promedio esperado es <span class="math inline">\(k_1 / k_2 = 10\)</span> moléculas. El estado estacionario promedio de <span class="math inline">\(10\)</span> moléculas se fundamenta en el principio de equilibrio dinámico, el cual se alcanza cuando la velocidad de entrada (producción) iguala a la velocidad de salida (degradación) del sistema. Dado que la producción ocurre a una tasa constante <span class="math inline">\(k_1\)</span> y la degradación es proporcional a la cantidad de moléculas presentes (<span class="math inline">\(k_2 \cdot \text{mRNA}\)</span>), el balance se logra matemáticamente cuando <span class="math inline">\(k_1 = k_2 \cdot \text{mRNA}\)</span>; al despejar la concentración de equilibrio, se obtiene el cociente <span class="math inline">\(k_1 / k_2\)</span>, lo que resulta en un valor promedio de <span class="math inline">\(10\)</span> moléculas para los parámetros dados.</p>
-<div id="8562ace7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.040902,&quot;end_time&quot;:&quot;2025-12-09T03:18:41.946745&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:41.905843&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="19">
+<div id="b5cebb8e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.048631,&quot;end_time&quot;:&quot;2025-12-09T04:08:09.770850&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:09.722219&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1225,7 +1228,7 @@ Día 7      | 144h - 168h         | 491        | 20.46
 <span id="cb25-103"><a href="#cb25-103" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> informe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A continuación se usa la simulación para el sistema planteado:</p>
-<div id="1f2fa5ca" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.098115,&quot;end_time&quot;:&quot;2025-12-09T03:18:42.126657&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:42.028542&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="20">
+<div id="462132ed" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.113696,&quot;end_time&quot;:&quot;2025-12-09T04:08:09.971288&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:09.857592&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parámetros</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Dado que se simulan ARNm, los procesos de transcripción y </span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># degradación suelen medirse en minutos o horas.</span></span>
@@ -1268,7 +1271,7 @@ Error Relativo (Media)     : 7.57%
 </div>
 </div>
 <p>Se visualizan los resultados de la simulación:</p>
-<div id="3ba25229" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.605325,&quot;end_time&quot;:&quot;2025-12-09T03:18:42.818261&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:42.212936&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="21">
+<div id="8c989299" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.40705,&quot;end_time&quot;:&quot;2025-12-09T04:08:10.470554&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:10.063504&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1316,6 +1319,404 @@ Error Relativo (Media)     : 7.57%
 <p>De forma paralela y asíncrona, se ejecuta un motor basado en el Algoritmo de Gillespie (SSA) para simular la dinámica meteorológica. En este contexto, los estados del clima (ej. “Despejado”, “Viento Cruzado”, “Tormenta Eléctrica”) se tratan como “especies químicas” discretas que transicionan estocásticamente en función de tasas de cambio históricas (propensidades). El algoritmo de Gillespie determina los intervalos exactos de tiempo en los que el sistema permanece en cada estado climático, generando una línea de tiempo de condiciones ambientales independiente del tráfico aéreo pero estadísticamente exacta.</p>
 <p>La integración de ambos modelos se realiza mediante una modulación dinámica de la tasa de servicio (<span class="math inline">\(\mu\)</span>). El estado vigente dictado por el módulo Gillespie actúa como una variable de control sobre el modelo M/M/1: cuando Gillespie transiciona a un estado de “Tormenta”, la tasa de servicio de la pista se reduce drásticamente o se anula (<span class="math inline">\(\mu \to 0\)</span>), provocando que las operaciones de aterrizaje y despegue se aborten. Esto fuerza al sistema de colas a entrar en un régimen de saturación o desvío de entidades, permitiendo analizar no solo la congestión por volumen de tráfico, sino la resiliencia del aeropuerto ante ventanas de inoperatividad estocástica y su capacidad de recuperación (recovery rate) una vez restablecidas las condiciones favorables.</p>
 <p>El pipeline de ejecución se orquesta mediante un reloj maestro que sincroniza dos generadores de eventos concurrentes: un módulo de tráfico que inyecta entidades (aeronaves) en la línea de tiempo usando NHPP por Thinning para replicar la demanda horaria, y un motor Gillespie independiente que actualiza asincrónicamente el estado global del clima (variables de entorno). Dentro del bucle principal de procesamiento (LEF), la lógica del servidor M/M/1 consulta en tiempo real el estado vigente dictado por Gillespie antes de intentar atender a una aeronave; si el motor climático indica un evento adverso (ej. “Tormenta”), se activa una interrupción que anula o penaliza drásticamente la tasa de servicio (<span class="math inline">\(\mu\)</span>), forzando la acumulación de entidades en la cola hasta que una nueva transición estocástica del clima restablezca la operatividad, permitiendo así medir el impacto sistémico de la interrupción.</p>
+<div id="5a67adc5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.430887,&quot;end_time&quot;:&quot;2025-12-09T04:08:11.058656&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:10.627769&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> heapq</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. CONFIGURACIÓN Y PARÁMETROS</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>SIM_DURATION <span class="op">=</span> <span class="fl">24.0</span>  <span class="co"># Horas</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>SEED <span class="op">=</span> rnd_seed</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Parámetros de Tráfico (NHPP)</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>LAMBDA_MAX <span class="op">=</span> <span class="fl">20.0</span>    <span class="co"># Tasa máxima de llegadas (aviones/hora) para Thinning</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>MU_OPERATIVO <span class="op">=</span> <span class="fl">25.0</span>  <span class="co"># Tasa de servicio de la pista (aviones/hora) en buen clima</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Parámetros Climáticos (Gillespie)</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Estado 0: Despejado, Estado 1: Tormenta</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>TASA_DESPEJADO_A_TORMENTA <span class="op">=</span> <span class="fl">0.15</span>  <span class="co"># Frecuencia de aparición de tormentas</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>TASA_TORMENTA_A_DESPEJADO <span class="op">=</span> <span class="fl">0.8</span>   <span class="co"># Velocidad de recuperación (duración tormenta)</span></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Tipos de Eventos</span></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>EVT_ARRIVAL <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>EVT_DEPARTURE <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>EVT_WEATHER <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Estados del Clima</span></span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>CLIMA_CLEAR <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>CLIMA_STORM <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>np.random.seed(SEED)</span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>random.seed(SEED)</span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> HybridAirportSim:</span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, t_max):</span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.t_max <span class="op">=</span> t_max</span>
+<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.clock <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Estado del Sistema</span></span>
+<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.queue_count <span class="op">=</span> <span class="dv">0</span>        <span class="co"># Aviones en cola (aire + tierra)</span></span>
+<span id="cb29-40"><a href="#cb29-40" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.server_busy <span class="op">=</span> <span class="va">False</span>    <span class="co"># Estado de la pista</span></span>
+<span id="cb29-41"><a href="#cb29-41" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.weather_state <span class="op">=</span> CLIMA_CLEAR</span>
+<span id="cb29-42"><a href="#cb29-42" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Gestión de Eventos (Lista de Eventos Futuros - LEF)</span></span>
+<span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.events <span class="op">=</span> []  <span class="co"># Heapq</span></span>
+<span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-46"><a href="#cb29-46" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Control de Eventos de Salida (para poder cancelarlos)</span></span>
+<span id="cb29-47"><a href="#cb29-47" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.current_departure_token <span class="op">=</span> <span class="va">None</span> </span>
+<span id="cb29-48"><a href="#cb29-48" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-49"><a href="#cb29-49" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Estadísticas</span></span>
+<span id="cb29-50"><a href="#cb29-50" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.stats <span class="op">=</span> {</span>
+<span id="cb29-51"><a href="#cb29-51" aria-hidden="true" tabindex="-1"></a>            <span class="st">'arrivals'</span>: <span class="dv">0</span>,</span>
+<span id="cb29-52"><a href="#cb29-52" aria-hidden="true" tabindex="-1"></a>            <span class="st">'completed'</span>: <span class="dv">0</span>,</span>
+<span id="cb29-53"><a href="#cb29-53" aria-hidden="true" tabindex="-1"></a>            <span class="st">'aborted_ops'</span>: <span class="dv">0</span>,  <span class="co"># Operaciones canceladas por clima</span></span>
+<span id="cb29-54"><a href="#cb29-54" aria-hidden="true" tabindex="-1"></a>            <span class="st">'weather_changes'</span>: <span class="dv">0</span>,</span>
+<span id="cb29-55"><a href="#cb29-55" aria-hidden="true" tabindex="-1"></a>            <span class="st">'storm_duration'</span>: <span class="fl">0.0</span></span>
+<span id="cb29-56"><a href="#cb29-56" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb29-57"><a href="#cb29-57" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-58"><a href="#cb29-58" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Historiales para graficar (tiempo, valor)</span></span>
+<span id="cb29-59"><a href="#cb29-59" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.history_occupancy <span class="op">=</span> [(<span class="fl">0.0</span>, <span class="dv">0</span>)]</span>
+<span id="cb29-60"><a href="#cb29-60" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.history_weather <span class="op">=</span> [(<span class="fl">0.0</span>, CLIMA_CLEAR)]</span>
+<span id="cb29-61"><a href="#cb29-61" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.history_aborts <span class="op">=</span> [] <span class="co"># Puntos (t, y) donde hubo abortos</span></span>
+<span id="cb29-62"><a href="#cb29-62" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-63"><a href="#cb29-63" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> schedule_event(<span class="va">self</span>, time, event_type, token<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb29-64"><a href="#cb29-64" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> time <span class="op">&lt;=</span> <span class="va">self</span>.t_max:</span>
+<span id="cb29-65"><a href="#cb29-65" aria-hidden="true" tabindex="-1"></a>            heapq.heappush(<span class="va">self</span>.events, (time, event_type, token))</span>
+<span id="cb29-66"><a href="#cb29-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-67"><a href="#cb29-67" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ---------------------------------------------------------</span></span>
+<span id="cb29-68"><a href="#cb29-68" aria-hidden="true" tabindex="-1"></a>    <span class="co"># MÓDULO 1: TRÁFICO AÉREO (NHPP - Thinning Algorithm)</span></span>
+<span id="cb29-69"><a href="#cb29-69" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ---------------------------------------------------------</span></span>
+<span id="cb29-70"><a href="#cb29-70" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_arrival_rate(<span class="va">self</span>, t):</span>
+<span id="cb29-71"><a href="#cb29-71" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb29-72"><a href="#cb29-72" aria-hidden="true" tabindex="-1"></a><span class="co">        Función de intensidad lambda(t).</span></span>
+<span id="cb29-73"><a href="#cb29-73" aria-hidden="true" tabindex="-1"></a><span class="co">        Modela picos de tráfico a las 8am y 6pm.</span></span>
+<span id="cb29-74"><a href="#cb29-74" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb29-75"><a href="#cb29-75" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Base de 5 aviones + oscilación de hasta 10 aviones</span></span>
+<span id="cb29-76"><a href="#cb29-76" aria-hidden="true" tabindex="-1"></a>        <span class="co"># t está en horas (0-24)</span></span>
+<span id="cb29-77"><a href="#cb29-77" aria-hidden="true" tabindex="-1"></a>        cycle <span class="op">=</span> np.sin((t <span class="op">-</span> <span class="dv">6</span>) <span class="op">*</span> np.pi <span class="op">/</span> <span class="dv">12</span>) <span class="op">**</span> <span class="dv">2</span>  </span>
+<span id="cb29-78"><a href="#cb29-78" aria-hidden="true" tabindex="-1"></a>        rate <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">15</span> <span class="op">*</span> cycle </span>
+<span id="cb29-79"><a href="#cb29-79" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> rate</span>
+<span id="cb29-80"><a href="#cb29-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-81"><a href="#cb29-81" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> schedule_next_arrival_nhpp(<span class="va">self</span>):</span>
+<span id="cb29-82"><a href="#cb29-82" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Genera la próxima llegada usando Thinning."""</span></span>
+<span id="cb29-83"><a href="#cb29-83" aria-hidden="true" tabindex="-1"></a>        t_curr <span class="op">=</span> <span class="va">self</span>.clock</span>
+<span id="cb29-84"><a href="#cb29-84" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb29-85"><a href="#cb29-85" aria-hidden="true" tabindex="-1"></a>            <span class="co"># 1. Generar paso de tiempo con tasa homogénea máxima</span></span>
+<span id="cb29-86"><a href="#cb29-86" aria-hidden="true" tabindex="-1"></a>            u1 <span class="op">=</span> random.random()</span>
+<span id="cb29-87"><a href="#cb29-87" aria-hidden="true" tabindex="-1"></a>            dt <span class="op">=</span> <span class="op">-</span>np.log(u1) <span class="op">/</span> LAMBDA_MAX</span>
+<span id="cb29-88"><a href="#cb29-88" aria-hidden="true" tabindex="-1"></a>            t_curr <span class="op">+=</span> dt</span>
+<span id="cb29-89"><a href="#cb29-89" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb29-90"><a href="#cb29-90" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> t_curr <span class="op">&gt;</span> <span class="va">self</span>.t_max:</span>
+<span id="cb29-91"><a href="#cb29-91" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="co"># Fin de simulación</span></span>
+<span id="cb29-92"><a href="#cb29-92" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb29-93"><a href="#cb29-93" aria-hidden="true" tabindex="-1"></a>            <span class="co"># 2. Test de aceptación/rechazo (Thinning)</span></span>
+<span id="cb29-94"><a href="#cb29-94" aria-hidden="true" tabindex="-1"></a>            lambda_t <span class="op">=</span> <span class="va">self</span>.get_arrival_rate(t_curr)</span>
+<span id="cb29-95"><a href="#cb29-95" aria-hidden="true" tabindex="-1"></a>            prob_accept <span class="op">=</span> lambda_t <span class="op">/</span> LAMBDA_MAX</span>
+<span id="cb29-96"><a href="#cb29-96" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb29-97"><a href="#cb29-97" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> random.random() <span class="op">&lt;=</span> prob_accept:</span>
+<span id="cb29-98"><a href="#cb29-98" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.schedule_event(t_curr, EVT_ARRIVAL)</span>
+<span id="cb29-99"><a href="#cb29-99" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb29-100"><a href="#cb29-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-101"><a href="#cb29-101" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ---------------------------------------------------------</span></span>
+<span id="cb29-102"><a href="#cb29-102" aria-hidden="true" tabindex="-1"></a>    <span class="co"># MÓDULO 2: MOTOR CLIMÁTICO (GILLESPIE SSA)</span></span>
+<span id="cb29-103"><a href="#cb29-103" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ---------------------------------------------------------</span></span>
+<span id="cb29-104"><a href="#cb29-104" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> schedule_next_weather_change(<span class="va">self</span>):</span>
+<span id="cb29-105"><a href="#cb29-105" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb29-106"><a href="#cb29-106" aria-hidden="true" tabindex="-1"></a><span class="co">        Determina el tiempo hasta el próximo cambio de clima</span></span>
+<span id="cb29-107"><a href="#cb29-107" aria-hidden="true" tabindex="-1"></a><span class="co">        basado en propensiones estocásticas (Gillespie).</span></span>
+<span id="cb29-108"><a href="#cb29-108" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb29-109"><a href="#cb29-109" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Determinar propensión (a0) según estado actual</span></span>
+<span id="cb29-110"><a href="#cb29-110" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.weather_state <span class="op">==</span> CLIMA_CLEAR:</span>
+<span id="cb29-111"><a href="#cb29-111" aria-hidden="true" tabindex="-1"></a>            a0 <span class="op">=</span> TASA_DESPEJADO_A_TORMENTA</span>
+<span id="cb29-112"><a href="#cb29-112" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb29-113"><a href="#cb29-113" aria-hidden="true" tabindex="-1"></a>            a0 <span class="op">=</span> TASA_TORMENTA_A_DESPEJADO</span>
+<span id="cb29-114"><a href="#cb29-114" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb29-115"><a href="#cb29-115" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Tiempo hasta la próxima reacción (tau)</span></span>
+<span id="cb29-116"><a href="#cb29-116" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> a0 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb29-117"><a href="#cb29-117" aria-hidden="true" tabindex="-1"></a>            r <span class="op">=</span> random.random()</span>
+<span id="cb29-118"><a href="#cb29-118" aria-hidden="true" tabindex="-1"></a>            tau <span class="op">=</span> (<span class="fl">1.0</span> <span class="op">/</span> a0) <span class="op">*</span> np.log(<span class="fl">1.0</span> <span class="op">/</span> r)</span>
+<span id="cb29-119"><a href="#cb29-119" aria-hidden="true" tabindex="-1"></a>            next_time <span class="op">=</span> <span class="va">self</span>.clock <span class="op">+</span> tau</span>
+<span id="cb29-120"><a href="#cb29-120" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.schedule_event(next_time, EVT_WEATHER)</span>
+<span id="cb29-121"><a href="#cb29-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-122"><a href="#cb29-122" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ---------------------------------------------------------</span></span>
+<span id="cb29-123"><a href="#cb29-123" aria-hidden="true" tabindex="-1"></a>    <span class="co"># MÓDULO 3: NÚCLEO DE SIMULACIÓN Y LÓGICA DE CONTROL</span></span>
+<span id="cb29-124"><a href="#cb29-124" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ---------------------------------------------------------</span></span>
+<span id="cb29-125"><a href="#cb29-125" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> run(<span class="va">self</span>):</span>
+<span id="cb29-126"><a href="#cb29-126" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Inicialización</span></span>
+<span id="cb29-127"><a href="#cb29-127" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.schedule_next_arrival_nhpp()</span>
+<span id="cb29-128"><a href="#cb29-128" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.schedule_next_weather_change()</span>
+<span id="cb29-129"><a href="#cb29-129" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-130"><a href="#cb29-130" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"--- Iniciando Simulación Híbrida (</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>t_max<span class="sc">}</span><span class="ss">h) ---"</span>)</span>
+<span id="cb29-131"><a href="#cb29-131" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-132"><a href="#cb29-132" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">self</span>.events:</span>
+<span id="cb29-133"><a href="#cb29-133" aria-hidden="true" tabindex="-1"></a>            time, <span class="bu">type</span>, token <span class="op">=</span> heapq.heappop(<span class="va">self</span>.events)</span>
+<span id="cb29-134"><a href="#cb29-134" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb29-135"><a href="#cb29-135" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Avanzar reloj</span></span>
+<span id="cb29-136"><a href="#cb29-136" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.clock <span class="op">=</span> time</span>
+<span id="cb29-137"><a href="#cb29-137" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb29-138"><a href="#cb29-138" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Registrar estado para gráficos (Step plot)</span></span>
+<span id="cb29-139"><a href="#cb29-139" aria-hidden="true" tabindex="-1"></a>            curr_occupancy <span class="op">=</span> <span class="va">self</span>.queue_count <span class="op">+</span> (<span class="dv">1</span> <span class="cf">if</span> <span class="va">self</span>.server_busy <span class="cf">else</span> <span class="dv">0</span>)</span>
+<span id="cb29-140"><a href="#cb29-140" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.history_occupancy.append((<span class="va">self</span>.clock, curr_occupancy))</span>
+<span id="cb29-141"><a href="#cb29-141" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.history_weather.append((<span class="va">self</span>.clock, <span class="va">self</span>.weather_state))</span>
+<span id="cb29-142"><a href="#cb29-142" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb29-143"><a href="#cb29-143" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Despachador de eventos</span></span>
+<span id="cb29-144"><a href="#cb29-144" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">type</span> <span class="op">==</span> EVT_ARRIVAL:</span>
+<span id="cb29-145"><a href="#cb29-145" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.handle_arrival()</span>
+<span id="cb29-146"><a href="#cb29-146" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> <span class="bu">type</span> <span class="op">==</span> EVT_DEPARTURE:</span>
+<span id="cb29-147"><a href="#cb29-147" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.handle_departure(token)</span>
+<span id="cb29-148"><a href="#cb29-148" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> <span class="bu">type</span> <span class="op">==</span> EVT_WEATHER:</span>
+<span id="cb29-149"><a href="#cb29-149" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.handle_weather_change()</span>
+<span id="cb29-150"><a href="#cb29-150" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb29-151"><a href="#cb29-151" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.generate_report()</span>
+<span id="cb29-152"><a href="#cb29-152" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.plot_results()</span>
+<span id="cb29-153"><a href="#cb29-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-154"><a href="#cb29-154" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> handle_arrival(<span class="va">self</span>):</span>
+<span id="cb29-155"><a href="#cb29-155" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.stats[<span class="st">'arrivals'</span>] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb29-156"><a href="#cb29-156" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.schedule_next_arrival_nhpp() <span class="co"># Programar siguiente recursivamente</span></span>
+<span id="cb29-157"><a href="#cb29-157" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-158"><a href="#cb29-158" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="va">self</span>.server_busy <span class="kw">and</span> <span class="va">self</span>.weather_state <span class="op">==</span> CLIMA_CLEAR:</span>
+<span id="cb29-159"><a href="#cb29-159" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Pista libre y buen clima: Aterrizaje inmediato</span></span>
+<span id="cb29-160"><a href="#cb29-160" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.server_busy <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb29-161"><a href="#cb29-161" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.schedule_departure()</span>
+<span id="cb29-162"><a href="#cb29-162" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb29-163"><a href="#cb29-163" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Pista ocupada O clima adverso: A la cola (Holding)</span></span>
+<span id="cb29-164"><a href="#cb29-164" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.queue_count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb29-165"><a href="#cb29-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-166"><a href="#cb29-166" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> schedule_departure(<span class="va">self</span>):</span>
+<span id="cb29-167"><a href="#cb29-167" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Generar tiempo de servicio exponencial</span></span>
+<span id="cb29-168"><a href="#cb29-168" aria-hidden="true" tabindex="-1"></a>        service_time <span class="op">=</span> random.expovariate(MU_OPERATIVO)</span>
+<span id="cb29-169"><a href="#cb29-169" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-170"><a href="#cb29-170" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Crear un token único para este servicio</span></span>
+<span id="cb29-171"><a href="#cb29-171" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Esto permite invalidar el evento si el clima cambia</span></span>
+<span id="cb29-172"><a href="#cb29-172" aria-hidden="true" tabindex="-1"></a>        token <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="fl">1e9</span>)</span>
+<span id="cb29-173"><a href="#cb29-173" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.current_departure_token <span class="op">=</span> token</span>
+<span id="cb29-174"><a href="#cb29-174" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-175"><a href="#cb29-175" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.schedule_event(<span class="va">self</span>.clock <span class="op">+</span> service_time, EVT_DEPARTURE, token)</span>
+<span id="cb29-176"><a href="#cb29-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-177"><a href="#cb29-177" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> handle_departure(<span class="va">self</span>, token):</span>
+<span id="cb29-178"><a href="#cb29-178" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Verificar si el token es válido (no fue abortado)</span></span>
+<span id="cb29-179"><a href="#cb29-179" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> token <span class="op">!=</span> <span class="va">self</span>.current_departure_token:</span>
+<span id="cb29-180"><a href="#cb29-180" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="co"># Evento ignorado (fue cancelado por clima)</span></span>
+<span id="cb29-181"><a href="#cb29-181" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb29-182"><a href="#cb29-182" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.stats[<span class="st">'completed'</span>] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb29-183"><a href="#cb29-183" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.server_busy <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb29-184"><a href="#cb29-184" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.current_departure_token <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb29-185"><a href="#cb29-185" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-186"><a href="#cb29-186" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Intentar procesar siguiente en cola SI el clima lo permite</span></span>
+<span id="cb29-187"><a href="#cb29-187" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.queue_count <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> <span class="va">self</span>.weather_state <span class="op">==</span> CLIMA_CLEAR:</span>
+<span id="cb29-188"><a href="#cb29-188" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.queue_count <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb29-189"><a href="#cb29-189" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.server_busy <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb29-190"><a href="#cb29-190" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.schedule_departure()</span>
+<span id="cb29-191"><a href="#cb29-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-192"><a href="#cb29-192" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> handle_weather_change(<span class="va">self</span>):</span>
+<span id="cb29-193"><a href="#cb29-193" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.stats[<span class="st">'weather_changes'</span>] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb29-194"><a href="#cb29-194" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-195"><a href="#cb29-195" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Alternar estado (0 -&gt; 1, 1 -&gt; 0)</span></span>
+<span id="cb29-196"><a href="#cb29-196" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.weather_state <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> <span class="va">self</span>.weather_state</span>
+<span id="cb29-197"><a href="#cb29-197" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-198"><a href="#cb29-198" aria-hidden="true" tabindex="-1"></a>        <span class="co"># LÓGICA DE INTERRUPCIÓN / RECUPERACIÓN</span></span>
+<span id="cb29-199"><a href="#cb29-199" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.weather_state <span class="op">==</span> CLIMA_STORM:</span>
+<span id="cb29-200"><a href="#cb29-200" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Transición a TORMENTA</span></span>
+<span id="cb29-201"><a href="#cb29-201" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="va">self</span>.server_busy:</span>
+<span id="cb29-202"><a href="#cb29-202" aria-hidden="true" tabindex="-1"></a>                <span class="co"># ABORTAR OPERACIÓN</span></span>
+<span id="cb29-203"><a href="#cb29-203" aria-hidden="true" tabindex="-1"></a>                <span class="co"># La aeronave debe hacer 'go-around' y volver a cola</span></span>
+<span id="cb29-204"><a href="#cb29-204" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.stats[<span class="st">'aborted_ops'</span>] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb29-205"><a href="#cb29-205" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.server_busy <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb29-206"><a href="#cb29-206" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.queue_count <span class="op">+=</span> <span class="dv">1</span> <span class="co"># Regresa a la cola</span></span>
+<span id="cb29-207"><a href="#cb29-207" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb29-208"><a href="#cb29-208" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Invalida el evento de salida pendiente</span></span>
+<span id="cb29-209"><a href="#cb29-209" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.current_departure_token <span class="op">=</span> <span class="va">None</span> </span>
+<span id="cb29-210"><a href="#cb29-210" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb29-211"><a href="#cb29-211" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Guardar punto para gráfico</span></span>
+<span id="cb29-212"><a href="#cb29-212" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.history_aborts.append(</span>
+<span id="cb29-213"><a href="#cb29-213" aria-hidden="true" tabindex="-1"></a>                    (<span class="va">self</span>.clock, <span class="va">self</span>.queue_count <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb29-214"><a href="#cb29-214" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb29-215"><a href="#cb29-215" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb29-216"><a href="#cb29-216" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="va">self</span>.weather_state <span class="op">==</span> CLIMA_CLEAR:</span>
+<span id="cb29-217"><a href="#cb29-217" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Transición a DESPEJADO (Recuperación)</span></span>
+<span id="cb29-218"><a href="#cb29-218" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Si hay cola, reiniciar operaciones inmediatamente</span></span>
+<span id="cb29-219"><a href="#cb29-219" aria-hidden="true" tabindex="-1"></a>            can_resume <span class="op">=</span> (<span class="va">self</span>.queue_count <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> </span>
+<span id="cb29-220"><a href="#cb29-220" aria-hidden="true" tabindex="-1"></a>                          <span class="kw">not</span> <span class="va">self</span>.server_busy)</span>
+<span id="cb29-221"><a href="#cb29-221" aria-hidden="true" tabindex="-1"></a>                          </span>
+<span id="cb29-222"><a href="#cb29-222" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> can_resume:</span>
+<span id="cb29-223"><a href="#cb29-223" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.queue_count <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb29-224"><a href="#cb29-224" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.server_busy <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb29-225"><a href="#cb29-225" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.schedule_departure()</span>
+<span id="cb29-226"><a href="#cb29-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-227"><a href="#cb29-227" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Programar siguiente cambio de clima (Gillespie)</span></span>
+<span id="cb29-228"><a href="#cb29-228" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.schedule_next_weather_change()</span>
+<span id="cb29-229"><a href="#cb29-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-230"><a href="#cb29-230" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ---------------------------------------------------------</span></span>
+<span id="cb29-231"><a href="#cb29-231" aria-hidden="true" tabindex="-1"></a>    <span class="co"># GENERACIÓN DE REPORTES Y GRÁFICOS</span></span>
+<span id="cb29-232"><a href="#cb29-232" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ---------------------------------------------------------</span></span>
+<span id="cb29-233"><a href="#cb29-233" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> generate_report(<span class="va">self</span>):</span>
+<span id="cb29-234"><a href="#cb29-234" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Calcular tiempo total en tormenta</span></span>
+<span id="cb29-235"><a href="#cb29-235" aria-hidden="true" tabindex="-1"></a>        t_storm <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb29-236"><a href="#cb29-236" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Alias para acortar líneas</span></span>
+<span id="cb29-237"><a href="#cb29-237" aria-hidden="true" tabindex="-1"></a>        hist <span class="op">=</span> <span class="va">self</span>.history_weather</span>
+<span id="cb29-238"><a href="#cb29-238" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-239"><a href="#cb29-239" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(hist)):</span>
+<span id="cb29-240"><a href="#cb29-240" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Desglose de cálculo de tiempo</span></span>
+<span id="cb29-241"><a href="#cb29-241" aria-hidden="true" tabindex="-1"></a>            t_curr <span class="op">=</span> hist[i][<span class="dv">0</span>]</span>
+<span id="cb29-242"><a href="#cb29-242" aria-hidden="true" tabindex="-1"></a>            t_prev <span class="op">=</span> hist[i<span class="op">-</span><span class="dv">1</span>][<span class="dv">0</span>]</span>
+<span id="cb29-243"><a href="#cb29-243" aria-hidden="true" tabindex="-1"></a>            t_delta <span class="op">=</span> t_curr <span class="op">-</span> t_prev</span>
+<span id="cb29-244"><a href="#cb29-244" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb29-245"><a href="#cb29-245" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> hist[i<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>]</span>
+<span id="cb29-246"><a href="#cb29-246" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> state <span class="op">==</span> CLIMA_STORM:</span>
+<span id="cb29-247"><a href="#cb29-247" aria-hidden="true" tabindex="-1"></a>                t_storm <span class="op">+=</span> t_delta</span>
+<span id="cb29-248"><a href="#cb29-248" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-249"><a href="#cb29-249" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Pre-cálculo de porcentaje para limpiar el f-string</span></span>
+<span id="cb29-250"><a href="#cb29-250" aria-hidden="true" tabindex="-1"></a>        pct_storm <span class="op">=</span> (t_storm <span class="op">/</span> <span class="va">self</span>.t_max) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb29-251"><a href="#cb29-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-252"><a href="#cb29-252" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb29-253"><a href="#cb29-253" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"REPORTE DE SIMULACIÓN AEROPORTUARIA HÍBRIDA"</span>)</span>
+<span id="cb29-254"><a href="#cb29-254" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"="</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb29-255"><a href="#cb29-255" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-256"><a href="#cb29-256" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Duración Simulación     : </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>t_max<span class="sc">}</span><span class="ss"> horas"</span>)</span>
+<span id="cb29-257"><a href="#cb29-257" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-258"><a href="#cb29-258" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Total Llegadas (NHPP)   : "</span></span>
+<span id="cb29-259"><a href="#cb29-259" aria-hidden="true" tabindex="-1"></a>              <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>stats[<span class="st">'arrivals'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb29-260"><a href="#cb29-260" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="cb29-261"><a href="#cb29-261" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Aterrizajes Exitosos    : "</span></span>
+<span id="cb29-262"><a href="#cb29-262" aria-hidden="true" tabindex="-1"></a>              <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>stats[<span class="st">'completed'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb29-263"><a href="#cb29-263" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="cb29-264"><a href="#cb29-264" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Operaciones Abortadas   : "</span></span>
+<span id="cb29-265"><a href="#cb29-265" aria-hidden="true" tabindex="-1"></a>              <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>stats[<span class="st">'aborted_ops'</span>]<span class="sc">}</span><span class="ss"> (Go-arounds)"</span>)</span>
+<span id="cb29-266"><a href="#cb29-266" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="cb29-267"><a href="#cb29-267" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb29-268"><a href="#cb29-268" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"METEOROLOGÍA (GILLESPIE SSA)"</span>)</span>
+<span id="cb29-269"><a href="#cb29-269" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-270"><a href="#cb29-270" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Eventos de Cambio Clima : "</span></span>
+<span id="cb29-271"><a href="#cb29-271" aria-hidden="true" tabindex="-1"></a>              <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>stats[<span class="st">'weather_changes'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb29-272"><a href="#cb29-272" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="cb29-273"><a href="#cb29-273" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Tiempo en Tormenta      : </span><span class="sc">{</span>t_storm<span class="sc">:.2f}</span><span class="ss"> h "</span></span>
+<span id="cb29-274"><a href="#cb29-274" aria-hidden="true" tabindex="-1"></a>              <span class="ss">f"(</span><span class="sc">{</span>pct_storm<span class="sc">:.1f}</span><span class="ss">%)"</span>)</span>
+<span id="cb29-275"><a href="#cb29-275" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="cb29-276"><a href="#cb29-276" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"="</span><span class="op">*</span><span class="dv">50</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb29-277"><a href="#cb29-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-278"><a href="#cb29-278" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> plot_results(<span class="va">self</span>):</span>
+<span id="cb29-279"><a href="#cb29-279" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Desempaquetar datos para historial de ocupación</span></span>
+<span id="cb29-280"><a href="#cb29-280" aria-hidden="true" tabindex="-1"></a>        times <span class="op">=</span> [x[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.history_occupancy]</span>
+<span id="cb29-281"><a href="#cb29-281" aria-hidden="true" tabindex="-1"></a>        occupancy <span class="op">=</span> [x[<span class="dv">1</span>] <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.history_occupancy]</span>
+<span id="cb29-282"><a href="#cb29-282" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-283"><a href="#cb29-283" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Procesar clima para rellenar áreas (fill_between)</span></span>
+<span id="cb29-284"><a href="#cb29-284" aria-hidden="true" tabindex="-1"></a>        w_times <span class="op">=</span> [x[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.history_weather]</span>
+<span id="cb29-285"><a href="#cb29-285" aria-hidden="true" tabindex="-1"></a>        w_states <span class="op">=</span> [x[<span class="dv">1</span>] <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.history_weather]</span>
+<span id="cb29-286"><a href="#cb29-286" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-287"><a href="#cb29-287" aria-hidden="true" tabindex="-1"></a>        plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb29-288"><a href="#cb29-288" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-289"><a href="#cb29-289" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 1. Dibujar Áreas de Tormenta</span></span>
+<span id="cb29-290"><a href="#cb29-290" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(w_times)<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb29-291"><a href="#cb29-291" aria-hidden="true" tabindex="-1"></a>            t_start <span class="op">=</span> w_times[i]</span>
+<span id="cb29-292"><a href="#cb29-292" aria-hidden="true" tabindex="-1"></a>            t_end <span class="op">=</span> w_times[i<span class="op">+</span><span class="dv">1</span>]</span>
+<span id="cb29-293"><a href="#cb29-293" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> w_states[i]</span>
+<span id="cb29-294"><a href="#cb29-294" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb29-295"><a href="#cb29-295" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> state <span class="op">==</span> CLIMA_STORM:</span>
+<span id="cb29-296"><a href="#cb29-296" aria-hidden="true" tabindex="-1"></a>                plt.axvspan(</span>
+<span id="cb29-297"><a href="#cb29-297" aria-hidden="true" tabindex="-1"></a>                    t_start, t_end, </span>
+<span id="cb29-298"><a href="#cb29-298" aria-hidden="true" tabindex="-1"></a>                    color<span class="op">=</span><span class="st">'red'</span>, alpha<span class="op">=</span><span class="fl">0.2</span>, lw<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb29-299"><a href="#cb29-299" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb29-300"><a href="#cb29-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-301"><a href="#cb29-301" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Etiqueta fantasma para la leyenda del clima</span></span>
+<span id="cb29-302"><a href="#cb29-302" aria-hidden="true" tabindex="-1"></a>        plt.axvspan(</span>
+<span id="cb29-303"><a href="#cb29-303" aria-hidden="true" tabindex="-1"></a>            <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="fl">0.1</span>, color<span class="op">=</span><span class="st">'red'</span>, alpha<span class="op">=</span><span class="fl">0.2</span>, </span>
+<span id="cb29-304"><a href="#cb29-304" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="st">'Condición: Tormenta (Pista Cerrada)'</span></span>
+<span id="cb29-305"><a href="#cb29-305" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb29-306"><a href="#cb29-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-307"><a href="#cb29-307" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 2. Curva de Ocupación</span></span>
+<span id="cb29-308"><a href="#cb29-308" aria-hidden="true" tabindex="-1"></a>        plt.step(</span>
+<span id="cb29-309"><a href="#cb29-309" aria-hidden="true" tabindex="-1"></a>            times, occupancy, where<span class="op">=</span><span class="st">'post'</span>, </span>
+<span id="cb29-310"><a href="#cb29-310" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">'#003366'</span>, lw<span class="op">=</span><span class="dv">2</span>, </span>
+<span id="cb29-311"><a href="#cb29-311" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="st">'Ocupación (Cola + Pista)'</span></span>
+<span id="cb29-312"><a href="#cb29-312" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb29-313"><a href="#cb29-313" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-314"><a href="#cb29-314" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 3. Marcar Abortos</span></span>
+<span id="cb29-315"><a href="#cb29-315" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.history_aborts:</span>
+<span id="cb29-316"><a href="#cb29-316" aria-hidden="true" tabindex="-1"></a>            ab_t <span class="op">=</span> [x[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.history_aborts]</span>
+<span id="cb29-317"><a href="#cb29-317" aria-hidden="true" tabindex="-1"></a>            ab_y <span class="op">=</span> [x[<span class="dv">1</span>] <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.history_aborts]</span>
+<span id="cb29-318"><a href="#cb29-318" aria-hidden="true" tabindex="-1"></a>            plt.scatter(</span>
+<span id="cb29-319"><a href="#cb29-319" aria-hidden="true" tabindex="-1"></a>                ab_t, ab_y, color<span class="op">=</span><span class="st">'red'</span>, </span>
+<span id="cb29-320"><a href="#cb29-320" aria-hidden="true" tabindex="-1"></a>                marker<span class="op">=</span><span class="st">'x'</span>, s<span class="op">=</span><span class="dv">100</span>, zorder<span class="op">=</span><span class="dv">5</span>, </span>
+<span id="cb29-321"><a href="#cb29-321" aria-hidden="true" tabindex="-1"></a>                label<span class="op">=</span><span class="st">'Operación Abortada'</span></span>
+<span id="cb29-322"><a href="#cb29-322" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb29-323"><a href="#cb29-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-324"><a href="#cb29-324" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 4. Curva de Demanda Teórica (Referencia)</span></span>
+<span id="cb29-325"><a href="#cb29-325" aria-hidden="true" tabindex="-1"></a>        t_ref <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="va">self</span>.t_max, <span class="dv">200</span>)</span>
+<span id="cb29-326"><a href="#cb29-326" aria-hidden="true" tabindex="-1"></a>        lambda_ref <span class="op">=</span> [</span>
+<span id="cb29-327"><a href="#cb29-327" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.get_arrival_rate(t) <span class="cf">for</span> t <span class="kw">in</span> t_ref</span>
+<span id="cb29-328"><a href="#cb29-328" aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb29-329"><a href="#cb29-329" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-330"><a href="#cb29-330" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Normalización visual</span></span>
+<span id="cb29-331"><a href="#cb29-331" aria-hidden="true" tabindex="-1"></a>        mx_ref <span class="op">=</span> <span class="bu">max</span>(lambda_ref) <span class="cf">if</span> lambda_ref <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb29-332"><a href="#cb29-332" aria-hidden="true" tabindex="-1"></a>        mx_occ <span class="op">=</span> <span class="bu">max</span>(occupancy) <span class="cf">if</span> occupancy <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb29-333"><a href="#cb29-333" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-334"><a href="#cb29-334" aria-hidden="true" tabindex="-1"></a>        scale_factor <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb29-335"><a href="#cb29-335" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> mx_ref <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb29-336"><a href="#cb29-336" aria-hidden="true" tabindex="-1"></a>            scale_factor <span class="op">=</span> mx_occ <span class="op">/</span> mx_ref</span>
+<span id="cb29-337"><a href="#cb29-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-338"><a href="#cb29-338" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Graficar perfil escalado</span></span>
+<span id="cb29-339"><a href="#cb29-339" aria-hidden="true" tabindex="-1"></a>        plt.plot(</span>
+<span id="cb29-340"><a href="#cb29-340" aria-hidden="true" tabindex="-1"></a>            t_ref, </span>
+<span id="cb29-341"><a href="#cb29-341" aria-hidden="true" tabindex="-1"></a>            np.array(lambda_ref) <span class="op">*</span> <span class="fl">0.5</span>, </span>
+<span id="cb29-342"><a href="#cb29-342" aria-hidden="true" tabindex="-1"></a>            <span class="st">'--'</span>, color<span class="op">=</span><span class="st">'green'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, </span>
+<span id="cb29-343"><a href="#cb29-343" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="st">'Perfil Demanda (NHPP) (Escalado)'</span></span>
+<span id="cb29-344"><a href="#cb29-344" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb29-345"><a href="#cb29-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-346"><a href="#cb29-346" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Construcción del título</span></span>
+<span id="cb29-347"><a href="#cb29-347" aria-hidden="true" tabindex="-1"></a>        title_str <span class="op">=</span> (</span>
+<span id="cb29-348"><a href="#cb29-348" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"Dinámica Aeroportuaria: Tráfico NHPP vs "</span></span>
+<span id="cb29-349"><a href="#cb29-349" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"Clima Gillespie</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb29-350"><a href="#cb29-350" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"(</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>stats[<span class="st">'aborted_ops'</span>]<span class="sc">}</span><span class="ss"> "</span></span>
+<span id="cb29-351"><a href="#cb29-351" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"operaciones abortadas)"</span></span>
+<span id="cb29-352"><a href="#cb29-352" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb29-353"><a href="#cb29-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-354"><a href="#cb29-354" aria-hidden="true" tabindex="-1"></a>        plt.title(title_str, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb29-355"><a href="#cb29-355" aria-hidden="true" tabindex="-1"></a>        plt.xlabel(<span class="st">'Hora del día'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb29-356"><a href="#cb29-356" aria-hidden="true" tabindex="-1"></a>        plt.ylabel(</span>
+<span id="cb29-357"><a href="#cb29-357" aria-hidden="true" tabindex="-1"></a>            <span class="st">'Cantidad de Aeronaves en Sistema'</span>, </span>
+<span id="cb29-358"><a href="#cb29-358" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span></span>
+<span id="cb29-359"><a href="#cb29-359" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb29-360"><a href="#cb29-360" aria-hidden="true" tabindex="-1"></a>        plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb29-361"><a href="#cb29-361" aria-hidden="true" tabindex="-1"></a>        plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb29-362"><a href="#cb29-362" aria-hidden="true" tabindex="-1"></a>        plt.xlim(<span class="dv">0</span>, <span class="va">self</span>.t_max)</span>
+<span id="cb29-363"><a href="#cb29-363" aria-hidden="true" tabindex="-1"></a>        plt.ylim(bottom<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb29-364"><a href="#cb29-364" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-365"><a href="#cb29-365" aria-hidden="true" tabindex="-1"></a>        plt.tight_layout()</span>
+<span id="cb29-366"><a href="#cb29-366" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
+<span id="cb29-367"><a href="#cb29-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-368"><a href="#cb29-368" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb29-369"><a href="#cb29-369" aria-hidden="true" tabindex="-1"></a><span class="co"># EJECUCIÓN</span></span>
+<span id="cb29-370"><a href="#cb29-370" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb29-371"><a href="#cb29-371" aria-hidden="true" tabindex="-1"></a>sim <span class="op">=</span> HybridAirportSim(t_max<span class="op">=</span>SIM_DURATION)</span>
+<span id="cb29-372"><a href="#cb29-372" aria-hidden="true" tabindex="-1"></a>sim.run()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>--- Iniciando Simulación Híbrida (24.0h) ---
+
+==================================================
+REPORTE DE SIMULACIÓN AEROPORTUARIA HÍBRIDA
+==================================================
+Duración Simulación     : 24.0 horas
+Total Llegadas (NHPP)   : 304
+Aterrizajes Exitosos    : 303
+Operaciones Abortadas   : 1 (Go-arounds)
+--------------------------------------------------
+METEOROLOGÍA (GILLESPIE SSA)
+Eventos de Cambio Clima : 6
+Tiempo en Tormenta      : 2.84 h (11.8%)
+==================================================
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tpi-simulation-in-data-science_files/figure-html/cell-23-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="uso-de-inteligencia-artificial" class="level3">
 <h3 class="anchored" data-anchor-id="uso-de-inteligencia-artificial">Uso de Inteligencia Artificial</h3>
@@ -1329,21 +1730,21 @@ Error Relativo (Media)     : 7.57%
 </section>
 <section id="anexo-código-base-en-python" class="level3">
 <h3 class="anchored" data-anchor-id="anexo-código-base-en-python">Anexo: Código base en Python</h3>
-<div id="f32ec244" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.041636,&quot;end_time&quot;:&quot;2025-12-09T03:18:43.120454&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:43.078818&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Código base</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear Congruential Generator (LGC)</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lcg(n, seed<span class="op">=</span><span class="dv">123</span>, a<span class="op">=</span><span class="dv">1103515245</span>, c<span class="op">=</span><span class="dv">12345</span>, m<span class="op">=</span><span class="dv">2</span><span class="op">**</span><span class="dv">31</span>):</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> seed</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    seq <span class="op">=</span> []</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> (a <span class="op">*</span> x <span class="op">+</span> c) <span class="op">%</span> m</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>        seq.append(x<span class="op">/</span>m)</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> seq</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>alea <span class="op">=</span> lcg(<span class="dv">10</span>)</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(alea)):</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(alea[i])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="0a27aeac" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.040975,&quot;end_time&quot;:&quot;2025-12-09T04:08:11.258792&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:11.217817&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Código base</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear Congruential Generator (LGC)</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lcg(n, seed<span class="op">=</span><span class="dv">123</span>, a<span class="op">=</span><span class="dv">1103515245</span>, c<span class="op">=</span><span class="dv">12345</span>, m<span class="op">=</span><span class="dv">2</span><span class="op">**</span><span class="dv">31</span>):</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> seed</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    seq <span class="op">=</span> []</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> (a <span class="op">*</span> x <span class="op">+</span> c) <span class="op">%</span> m</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>        seq.append(x<span class="op">/</span>m)</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> seq</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>alea <span class="op">=</span> lcg(<span class="dv">10</span>)</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(alea)):</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(alea[i])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.20531828328967094
 0.6873863865621388
@@ -1357,211 +1758,211 @@ Error Relativo (Media)     : 7.57%
 0.027218241710215807</code></pre>
 </div>
 </div>
-<div id="a9af2cc2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.045464,&quot;end_time&quot;:&quot;2025-12-09T03:18:43.195774&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:43.150310&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="23">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Código base</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimación de Pi por Monte Carlo</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100000</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>u1 <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">1</span>, N)</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>u2 <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">1</span>, N)</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>pi_est <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> np.mean(u1<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> u2<span class="op">**</span><span class="dv">2</span> <span class="op">&lt;=</span> <span class="dv">1</span>)</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Valor estimado de pi: </span><span class="sc">{</span>pi_est<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Valor estimado de pi: 3.14076</code></pre>
-</div>
-</div>
-<div id="d31d6e30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:1.12688,&quot;end_time&quot;:&quot;2025-12-09T03:18:44.352152&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:43.225272&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="24">
+<div id="3834fa54" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.048138,&quot;end_time&quot;:&quot;2025-12-09T04:08:11.336700&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:11.288562&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Código base</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Implementación Metropolis–Hastings</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimación de Pi por Monte Carlo</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mh(n_iter<span class="op">=</span><span class="dv">5000</span>, start<span class="op">=</span><span class="fl">0.5</span>, prop_sd<span class="op">=</span><span class="fl">0.1</span>):</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Inicializar la cadena (array lleno de ceros)</span></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    theta <span class="op">=</span> np.zeros(n_iter)</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    theta[<span class="dv">0</span>] <span class="op">=</span> start</span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bucle desde el segundo elemento (índice 1) hasta el final</span></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n_iter):</span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Propuesta: Distribución normal centrada en el theta anterior</span></span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Equivalente en R: rnorm(1, theta[t-1], prop_sd)</span></span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>        prop <span class="op">=</span> np.random.normal(loc<span class="op">=</span>theta[t<span class="op">-</span><span class="dv">1</span>], scale<span class="op">=</span>prop_sd)</span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Verificación de límites (Prior Uniforme Implícito [0,1])</span></span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Si la propuesta se sale del rango [0, 1], se rechaza inmediatamente</span></span>
-<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> prop <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> prop <span class="op">&gt;</span> <span class="dv">1</span>:</span>
-<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>            theta[t] <span class="op">=</span> theta[t<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Calcular la Verosimilitud (Likelihood) usando la función </span></span>
-<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>            <span class="co"># de masa de probabilidad</span></span>
-<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Equivalente en R: dbinom(7, 10, prob)</span></span>
-<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>            <span class="co"># * 1 representa el Prior (Uniforme)</span></span>
-<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>            num <span class="op">=</span> binom.pmf(k<span class="op">=</span><span class="dv">7</span>, n<span class="op">=</span><span class="dv">10</span>, p<span class="op">=</span>prop) <span class="op">*</span> <span class="dv">1</span>      </span>
-<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>            den <span class="op">=</span> binom.pmf(k<span class="op">=</span><span class="dv">7</span>, n<span class="op">=</span><span class="dv">10</span>, p<span class="op">=</span>theta[t<span class="op">-</span><span class="dv">1</span>]) <span class="op">*</span> <span class="dv">1</span></span>
-<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Probabilidad de aceptación (alpha)</span></span>
-<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a>            ratio <span class="op">=</span> num <span class="op">/</span> den</span>
-<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a>            alpha <span class="op">=</span> <span class="bu">min</span>(<span class="dv">1</span>, ratio)</span>
-<span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Paso de Aceptación o Rechazo</span></span>
-<span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Generamos un número aleatorio uniforme </span></span>
-<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a>            <span class="co"># y lo comparamos con alpha</span></span>
-<span id="cb33-37"><a href="#cb33-37" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> np.random.uniform() <span class="op">&lt;</span> alpha:</span>
-<span id="cb33-38"><a href="#cb33-38" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Aceptar la propuesta</span></span>
-<span id="cb33-39"><a href="#cb33-39" aria-hidden="true" tabindex="-1"></a>                theta[t] <span class="op">=</span> prop     </span>
-<span id="cb33-40"><a href="#cb33-40" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb33-41"><a href="#cb33-41" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Rechazar y mantener el valor anterior</span></span>
-<span id="cb33-42"><a href="#cb33-42" aria-hidden="true" tabindex="-1"></a>                theta[t] <span class="op">=</span> theta[t<span class="op">-</span><span class="dv">1</span>] </span>
-<span id="cb33-43"><a href="#cb33-43" aria-hidden="true" tabindex="-1"></a>                </span>
-<span id="cb33-44"><a href="#cb33-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> theta</span>
-<span id="cb33-45"><a href="#cb33-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-46"><a href="#cb33-46" aria-hidden="true" tabindex="-1"></a>chain <span class="op">=</span> mh()</span>
-<span id="cb33-47"><a href="#cb33-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Media Posterior Estimada: </span><span class="sc">{</span>np<span class="sc">.</span>mean(chain)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>u1 <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">1</span>, N)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>u2 <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">1</span>, N)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>pi_est <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> np.mean(u1<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> u2<span class="op">**</span><span class="dv">2</span> <span class="op">&lt;=</span> <span class="dv">1</span>)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Valor estimado de pi: </span><span class="sc">{</span>pi_est<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Media Posterior Estimada: 0.6619</code></pre>
+<pre><code>Valor estimado de pi: 3.14836</code></pre>
 </div>
 </div>
-<div id="495502f2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.045592,&quot;end_time&quot;:&quot;2025-12-09T03:18:44.428331&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:44.382739&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="25">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Codigo base </span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulación de Eventos Discretos (M/M/1 o M/M/c)</span></span>
+<div id="fdf8a6e4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:1.313035,&quot;end_time&quot;:&quot;2025-12-09T04:08:12.681848&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:11.368813&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Código base</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Implementación Metropolis–Hastings</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_mm1(lam, mu, T_max):</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Nota: 'lambda' es una palabra reservada en Python, usamos 'lam'</span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># R usa la tasa (rate) para rexp: rexp(1, lambda)</span></span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Numpy usa la escala (scale = 1/rate): exponential(1/lam)</span></span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    t_arr <span class="op">=</span> np.random.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>lam)</span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    t_dep <span class="op">=</span> <span class="bu">float</span>(<span class="st">'inf'</span>)  <span class="co"># Infinito en Python</span></span>
-<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>    arrivals <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>    departures <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>    wait_times <span class="op">=</span> []  </span>
-<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> t <span class="op">&lt;</span> T_max:</span>
-<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> t_arr <span class="op">&lt;</span> t_dep:</span>
-<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># --- Evento de Llegada ---</span></span>
-<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>            t <span class="op">=</span> t_arr</span>
-<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>            n <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>            arrivals <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Si el servidor estaba libre (n=1 tras la llegada)</span></span>
-<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>            <span class="co"># se programa servicio</span></span>
-<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>                t_dep <span class="op">=</span> t <span class="op">+</span> np.random.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>mu)</span>
-<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Programar la siguiente llegada</span></span>
-<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>            t_arr <span class="op">=</span> t <span class="op">+</span> np.random.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>lam)</span>
-<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Evento de Salida</span></span>
-<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>            t <span class="op">=</span> t_dep</span>
-<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>            n <span class="op">-=</span> <span class="dv">1</span></span>
-<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>            departures <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Se agrega el tiempo a la lista</span></span>
-<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>            wait_times.append(t_dep) </span>
-<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Si quedan clientes, programar la siguiente salida</span></span>
-<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a>                t_dep <span class="op">=</span> t <span class="op">+</span> np.random.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>mu)</span>
-<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Si no hay nadie, la próxima salida es "infinita"</span></span>
-<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a>                t_dep <span class="op">=</span> <span class="bu">float</span>(<span class="st">'inf'</span>)</span>
-<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb35-50"><a href="#cb35-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Se devuelve un diccionario con los tiempos</span></span>
-<span id="cb35-51"><a href="#cb35-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
-<span id="cb35-52"><a href="#cb35-52" aria-hidden="true" tabindex="-1"></a>        <span class="st">"arrivals"</span>: arrivals, </span>
-<span id="cb35-53"><a href="#cb35-53" aria-hidden="true" tabindex="-1"></a>        <span class="st">"departures"</span>: departures, </span>
-<span id="cb35-54"><a href="#cb35-54" aria-hidden="true" tabindex="-1"></a>        <span class="st">"wait_times"</span>: wait_times</span>
-<span id="cb35-55"><a href="#cb35-55" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb35-56"><a href="#cb35-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-57"><a href="#cb35-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Lambda = 2 clientes/min, Mu = 3 clientes/min, Tiempo = 100 min</span></span>
-<span id="cb35-58"><a href="#cb35-58" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> simulate_mm1(lam<span class="op">=</span><span class="dv">2</span>, mu<span class="op">=</span><span class="dv">3</span>, T_max<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb35-59"><a href="#cb35-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-60"><a href="#cb35-60" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Llegadas totales: </span><span class="sc">{</span>res[<span class="st">'arrivals'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb35-61"><a href="#cb35-61" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Salidas totales: </span><span class="sc">{</span>res[<span class="st">'departures'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb35-62"><a href="#cb35-62" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Últimos 5 tiempos de salida:"</span>)</span>
-<span id="cb35-63"><a href="#cb35-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-64"><a href="#cb35-64" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(res[<span class="st">'wait_times'</span>])<span class="op">-</span><span class="dv">5</span>,<span class="bu">len</span>(res[<span class="st">'wait_times'</span>])):</span>
-<span id="cb35-65"><a href="#cb35-65" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(res[<span class="st">'wait_times'</span>][i])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mh(n_iter<span class="op">=</span><span class="dv">5000</span>, start<span class="op">=</span><span class="fl">0.5</span>, prop_sd<span class="op">=</span><span class="fl">0.1</span>):</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Inicializar la cadena (array lleno de ceros)</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    theta <span class="op">=</span> np.zeros(n_iter)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    theta[<span class="dv">0</span>] <span class="op">=</span> start</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bucle desde el segundo elemento (índice 1) hasta el final</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n_iter):</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Propuesta: Distribución normal centrada en el theta anterior</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Equivalente en R: rnorm(1, theta[t-1], prop_sd)</span></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>        prop <span class="op">=</span> np.random.normal(loc<span class="op">=</span>theta[t<span class="op">-</span><span class="dv">1</span>], scale<span class="op">=</span>prop_sd)</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Verificación de límites (Prior Uniforme Implícito [0,1])</span></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Si la propuesta se sale del rango [0, 1], se rechaza inmediatamente</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> prop <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> prop <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>            theta[t] <span class="op">=</span> theta[t<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Calcular la Verosimilitud (Likelihood) usando la función </span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>            <span class="co"># de masa de probabilidad</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Equivalente en R: dbinom(7, 10, prob)</span></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>            <span class="co"># * 1 representa el Prior (Uniforme)</span></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>            num <span class="op">=</span> binom.pmf(k<span class="op">=</span><span class="dv">7</span>, n<span class="op">=</span><span class="dv">10</span>, p<span class="op">=</span>prop) <span class="op">*</span> <span class="dv">1</span>      </span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>            den <span class="op">=</span> binom.pmf(k<span class="op">=</span><span class="dv">7</span>, n<span class="op">=</span><span class="dv">10</span>, p<span class="op">=</span>theta[t<span class="op">-</span><span class="dv">1</span>]) <span class="op">*</span> <span class="dv">1</span></span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Probabilidad de aceptación (alpha)</span></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>            ratio <span class="op">=</span> num <span class="op">/</span> den</span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>            alpha <span class="op">=</span> <span class="bu">min</span>(<span class="dv">1</span>, ratio)</span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Paso de Aceptación o Rechazo</span></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Generamos un número aleatorio uniforme </span></span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>            <span class="co"># y lo comparamos con alpha</span></span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> np.random.uniform() <span class="op">&lt;</span> alpha:</span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Aceptar la propuesta</span></span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>                theta[t] <span class="op">=</span> prop     </span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Rechazar y mantener el valor anterior</span></span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a>                theta[t] <span class="op">=</span> theta[t<span class="op">-</span><span class="dv">1</span>] </span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> theta</span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>chain <span class="op">=</span> mh()</span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Media Posterior Estimada: </span><span class="sc">{</span>np<span class="sc">.</span>mean(chain)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Llegadas totales: 186
-Salidas totales: 185
-Últimos 5 tiempos de salida:
-98.19060555954587
-98.34454197321216
-99.22724838421533
-99.73139994799561
-100.18581142408277</code></pre>
+<pre><code>Media Posterior Estimada: 0.6778</code></pre>
 </div>
 </div>
-<div id="48bd6acc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.047162,&quot;end_time&quot;:&quot;2025-12-09T03:18:44.503879&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T03:18:44.456717&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="26">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Codigo base</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Implementación Gillespie SSA</span></span>
+<div id="1cb7a4ed" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.047223,&quot;end_time&quot;:&quot;2025-12-09T04:08:12.762354&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:12.715131&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Codigo base </span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulación de Eventos Discretos (M/M/1 o M/M/c)</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie(Tmax, k1<span class="op">=</span><span class="dv">10</span>, k2<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_mm1(lam, mu, T_max):</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Nota: 'lambda' es una palabra reservada en Python, usamos 'lam'</span></span>
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Listas para almacenar el historial</span></span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    ts <span class="op">=</span> [t]</span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> [X]</span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> t <span class="op">&lt;</span> Tmax:</span>
-<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Cálculo de propensiones</span></span>
-<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>        a1 <span class="op">=</span> k1</span>
-<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>        a2 <span class="op">=</span> k2 <span class="op">*</span> X</span>
-<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>        a0 <span class="op">=</span> a1 <span class="op">+</span> a2</span>
-<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Si la propensión total es 0, el sistema se detiene</span></span>
-<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> a0 <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
-<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 1. Generar tiempo hasta el próximo evento (tau)</span></span>
-<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># R: -log(runif(1)) / a0 </span></span>
-<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Esto es matemáticamente generar una variable </span></span>
-<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># aleatoria Exponencial con tasa a0</span></span>
-<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>        tau <span class="op">=</span> np.random.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>a0)</span>
-<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 2. Determinar qué evento ocurre</span></span>
-<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>        r2 <span class="op">=</span> np.random.uniform()</span>
-<span id="cb37-33"><a href="#cb37-33" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb37-34"><a href="#cb37-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> r2 <span class="op">*</span> a0 <span class="op">&lt;</span> a1:</span>
-<span id="cb37-35"><a href="#cb37-35" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Evento 1: Nacimiento / Producción</span></span>
-<span id="cb37-36"><a href="#cb37-36" aria-hidden="true" tabindex="-1"></a>            X <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb37-37"><a href="#cb37-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb37-38"><a href="#cb37-38" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Evento 2: Muerte / Degradación</span></span>
-<span id="cb37-39"><a href="#cb37-39" aria-hidden="true" tabindex="-1"></a>            X <span class="op">=</span> <span class="bu">max</span>(<span class="dv">0</span>, X <span class="op">-</span> <span class="dv">1</span>)</span>
-<span id="cb37-40"><a href="#cb37-40" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb37-41"><a href="#cb37-41" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Actualizar tiempo y almacenar estado</span></span>
-<span id="cb37-42"><a href="#cb37-42" aria-hidden="true" tabindex="-1"></a>        t <span class="op">+=</span> tau</span>
-<span id="cb37-43"><a href="#cb37-43" aria-hidden="true" tabindex="-1"></a>        ts.append(t)</span>
-<span id="cb37-44"><a href="#cb37-44" aria-hidden="true" tabindex="-1"></a>        xs.append(X)</span>
-<span id="cb37-45"><a href="#cb37-45" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb37-46"><a href="#cb37-46" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Devolvemos un DataFrame de Pandas </span></span>
-<span id="cb37-47"><a href="#cb37-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame({<span class="st">'time'</span>: ts, <span class="st">'X'</span>: xs})</span>
-<span id="cb37-48"><a href="#cb37-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-49"><a href="#cb37-49" aria-hidden="true" tabindex="-1"></a>df_result <span class="op">=</span> gillespie(Tmax<span class="op">=</span><span class="dv">50</span>)</span>
-<span id="cb37-50"><a href="#cb37-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-51"><a href="#cb37-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar las primeras 5 filas</span></span>
-<span id="cb37-52"><a href="#cb37-52" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_result.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># R usa la tasa (rate) para rexp: rexp(1, lambda)</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Numpy usa la escala (scale = 1/rate): exponential(1/lam)</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    t_arr <span class="op">=</span> np.random.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>lam)</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>    t_dep <span class="op">=</span> <span class="bu">float</span>(<span class="st">'inf'</span>)  <span class="co"># Infinito en Python</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    arrivals <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    departures <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    wait_times <span class="op">=</span> []  </span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> t <span class="op">&lt;</span> T_max:</span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> t_arr <span class="op">&lt;</span> t_dep:</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># --- Evento de Llegada ---</span></span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>            t <span class="op">=</span> t_arr</span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>            n <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>            arrivals <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Si el servidor estaba libre (n=1 tras la llegada)</span></span>
+<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>            <span class="co"># se programa servicio</span></span>
+<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>                t_dep <span class="op">=</span> t <span class="op">+</span> np.random.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>mu)</span>
+<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Programar la siguiente llegada</span></span>
+<span id="cb37-33"><a href="#cb37-33" aria-hidden="true" tabindex="-1"></a>            t_arr <span class="op">=</span> t <span class="op">+</span> np.random.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>lam)</span>
+<span id="cb37-34"><a href="#cb37-34" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb37-35"><a href="#cb37-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb37-36"><a href="#cb37-36" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Evento de Salida</span></span>
+<span id="cb37-37"><a href="#cb37-37" aria-hidden="true" tabindex="-1"></a>            t <span class="op">=</span> t_dep</span>
+<span id="cb37-38"><a href="#cb37-38" aria-hidden="true" tabindex="-1"></a>            n <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb37-39"><a href="#cb37-39" aria-hidden="true" tabindex="-1"></a>            departures <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb37-40"><a href="#cb37-40" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Se agrega el tiempo a la lista</span></span>
+<span id="cb37-41"><a href="#cb37-41" aria-hidden="true" tabindex="-1"></a>            wait_times.append(t_dep) </span>
+<span id="cb37-42"><a href="#cb37-42" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb37-43"><a href="#cb37-43" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb37-44"><a href="#cb37-44" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Si quedan clientes, programar la siguiente salida</span></span>
+<span id="cb37-45"><a href="#cb37-45" aria-hidden="true" tabindex="-1"></a>                t_dep <span class="op">=</span> t <span class="op">+</span> np.random.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>mu)</span>
+<span id="cb37-46"><a href="#cb37-46" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb37-47"><a href="#cb37-47" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Si no hay nadie, la próxima salida es "infinita"</span></span>
+<span id="cb37-48"><a href="#cb37-48" aria-hidden="true" tabindex="-1"></a>                t_dep <span class="op">=</span> <span class="bu">float</span>(<span class="st">'inf'</span>)</span>
+<span id="cb37-49"><a href="#cb37-49" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb37-50"><a href="#cb37-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Se devuelve un diccionario con los tiempos</span></span>
+<span id="cb37-51"><a href="#cb37-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb37-52"><a href="#cb37-52" aria-hidden="true" tabindex="-1"></a>        <span class="st">"arrivals"</span>: arrivals, </span>
+<span id="cb37-53"><a href="#cb37-53" aria-hidden="true" tabindex="-1"></a>        <span class="st">"departures"</span>: departures, </span>
+<span id="cb37-54"><a href="#cb37-54" aria-hidden="true" tabindex="-1"></a>        <span class="st">"wait_times"</span>: wait_times</span>
+<span id="cb37-55"><a href="#cb37-55" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb37-56"><a href="#cb37-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-57"><a href="#cb37-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Lambda = 2 clientes/min, Mu = 3 clientes/min, Tiempo = 100 min</span></span>
+<span id="cb37-58"><a href="#cb37-58" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> simulate_mm1(lam<span class="op">=</span><span class="dv">2</span>, mu<span class="op">=</span><span class="dv">3</span>, T_max<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb37-59"><a href="#cb37-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-60"><a href="#cb37-60" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Llegadas totales: </span><span class="sc">{</span>res[<span class="st">'arrivals'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb37-61"><a href="#cb37-61" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Salidas totales: </span><span class="sc">{</span>res[<span class="st">'departures'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb37-62"><a href="#cb37-62" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Últimos 5 tiempos de salida:"</span>)</span>
+<span id="cb37-63"><a href="#cb37-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-64"><a href="#cb37-64" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(res[<span class="st">'wait_times'</span>])<span class="op">-</span><span class="dv">5</span>,<span class="bu">len</span>(res[<span class="st">'wait_times'</span>])):</span>
+<span id="cb37-65"><a href="#cb37-65" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(res[<span class="st">'wait_times'</span>][i])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Llegadas totales: 215
+Salidas totales: 215
+Últimos 5 tiempos de salida:
+98.43347389754513
+98.50944958825472
+99.40263056754019
+99.71489988562641
+100.03483812961011</code></pre>
+</div>
+</div>
+<div id="abc6aebd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;papermill&quot;,&quot;value&quot;:{&quot;duration&quot;:0.053637,&quot;end_time&quot;:&quot;2025-12-09T04:08:12.847262&quot;,&quot;exception&quot;:false,&quot;start_time&quot;:&quot;2025-12-09T04:08:12.793625&quot;,&quot;status&quot;:&quot;completed&quot;}}" data-tags="[]" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Codigo base</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Implementación Gillespie SSA</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie(Tmax, k1<span class="op">=</span><span class="dv">10</span>, k2<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Listas para almacenar el historial</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>    ts <span class="op">=</span> [t]</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> [X]</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> t <span class="op">&lt;</span> Tmax:</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Cálculo de propensiones</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>        a1 <span class="op">=</span> k1</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>        a2 <span class="op">=</span> k2 <span class="op">*</span> X</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>        a0 <span class="op">=</span> a1 <span class="op">+</span> a2</span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Si la propensión total es 0, el sistema se detiene</span></span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> a0 <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 1. Generar tiempo hasta el próximo evento (tau)</span></span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># R: -log(runif(1)) / a0 </span></span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Esto es matemáticamente generar una variable </span></span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># aleatoria Exponencial con tasa a0</span></span>
+<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a>        tau <span class="op">=</span> np.random.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>a0)</span>
+<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb39-31"><a href="#cb39-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 2. Determinar qué evento ocurre</span></span>
+<span id="cb39-32"><a href="#cb39-32" aria-hidden="true" tabindex="-1"></a>        r2 <span class="op">=</span> np.random.uniform()</span>
+<span id="cb39-33"><a href="#cb39-33" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb39-34"><a href="#cb39-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> r2 <span class="op">*</span> a0 <span class="op">&lt;</span> a1:</span>
+<span id="cb39-35"><a href="#cb39-35" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Evento 1: Nacimiento / Producción</span></span>
+<span id="cb39-36"><a href="#cb39-36" aria-hidden="true" tabindex="-1"></a>            X <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb39-37"><a href="#cb39-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb39-38"><a href="#cb39-38" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Evento 2: Muerte / Degradación</span></span>
+<span id="cb39-39"><a href="#cb39-39" aria-hidden="true" tabindex="-1"></a>            X <span class="op">=</span> <span class="bu">max</span>(<span class="dv">0</span>, X <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb39-40"><a href="#cb39-40" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb39-41"><a href="#cb39-41" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Actualizar tiempo y almacenar estado</span></span>
+<span id="cb39-42"><a href="#cb39-42" aria-hidden="true" tabindex="-1"></a>        t <span class="op">+=</span> tau</span>
+<span id="cb39-43"><a href="#cb39-43" aria-hidden="true" tabindex="-1"></a>        ts.append(t)</span>
+<span id="cb39-44"><a href="#cb39-44" aria-hidden="true" tabindex="-1"></a>        xs.append(X)</span>
+<span id="cb39-45"><a href="#cb39-45" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb39-46"><a href="#cb39-46" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Devolvemos un DataFrame de Pandas </span></span>
+<span id="cb39-47"><a href="#cb39-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame({<span class="st">'time'</span>: ts, <span class="st">'X'</span>: xs})</span>
+<span id="cb39-48"><a href="#cb39-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-49"><a href="#cb39-49" aria-hidden="true" tabindex="-1"></a>df_result <span class="op">=</span> gillespie(Tmax<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb39-50"><a href="#cb39-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-51"><a href="#cb39-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar las primeras 5 filas</span></span>
+<span id="cb39-52"><a href="#cb39-52" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_result.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       time  X
 0  0.000000  0
-1  0.063308  1
-2  0.113872  2
-3  0.285209  3
-4  0.337472  4</code></pre>
+1  0.031461  1
+2  0.052792  2
+3  0.214520  3
+4  0.226669  4</code></pre>
 </div>
 </div>
 
