@@ -18,7 +18,7 @@ Integrantes:
 
 Ver [ENUNCIADO](TPISIM.pdf)
 
-Ver [RESOUCIÓN](docs/tpi-simulation-in-data-science.html)
+Ver [RESOUCIÓN](docs/index.html)
 
 Descargar [INFORME EN PDF](docs/tpi-simulation-in-data-science.pdf)
 
