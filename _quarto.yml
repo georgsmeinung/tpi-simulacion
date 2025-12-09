@@ -17,7 +17,6 @@ format:
   html:
     mainfont: "Noto Sans"       # Fuente del texto
     monofont: "Noto Sans Mono"  # Fuente para bloques de código
-    fontsize: 1.1em             # Tamaño base
     css: styles.css
     toc: true
   pdf:
@@ -25,5 +24,11 @@ format:
     pdf-engine: xelatex         
     mainfont: "Noto Sans"       # Nombre exacto de la fuente en tu PC
     monofont: "Noto Sans Mono"  # Fuente código (opcional)
+    geometry:
+      - top=1.5cm
+      - bottom=1.5cm
+      - left=1.5cm
+      - right=1.5cm
+    papersize: a4 # Es buena práctica definir el tamaño de hoja
 
 

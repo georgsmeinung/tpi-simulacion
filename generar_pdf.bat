@@ -1,0 +1,1 @@
+quarto render tpi-simulation-in-data-science.ipynb --to pdf --output-dir=docs
