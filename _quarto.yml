@@ -2,20 +2,28 @@ project:
   type: website
 
 website:
-  title: "tpi-simulacion"
+  title: "Trabajo Práctico Integral - Simulación en Ciencia de Datos"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+    right:
+      - text: "Reporte en PDF"
+        href: "tpi-simulation-in-data-science.pdf" 
+
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    mainfont: "Noto Sans"       # Fuente del texto
+    monofont: "Noto Sans Mono"  # Fuente para bloques de código
+    fontsize: 1.1em             # Tamaño base
     css: styles.css
     toc: true
-
+  pdf:
+    documentclass: article
+    pdf-engine: xelatex         
+    mainfont: "Noto Sans"       # Nombre exacto de la fuente en tu PC
+    monofont: "Noto Sans Mono"  # Fuente código (opcional)
 
 
