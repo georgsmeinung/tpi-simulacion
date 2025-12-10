@@ -1,1 +1,1 @@
-quarto render tpi-simulation-in-data-science.ipynb --to html --output-dir=docs
+quarto render tpi-simulation-in-data-science.qmd --to html --output-dir=docs
