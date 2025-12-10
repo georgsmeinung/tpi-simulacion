@@ -1,6 +1,9 @@
 project:
   type: website
 
+execute:
+  python: "C:\\Users\\Jenic\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+
 website:
   title: "Trabajo Práctico Integral - Simulación en Ciencia de Datos"
   navbar:
