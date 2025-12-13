@@ -14,7 +14,6 @@ Integrantes:
 
 -   CANCELAS, Martín
 -   FILIPUZZI, Juan Manuel
--   GALLARDO, Ezequiel
 -   NICOLAU, Jorge
 
 Ver [ENUNCIADO](TPISIM.pdf)
